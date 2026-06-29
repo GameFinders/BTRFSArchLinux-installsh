@@ -1,12 +1,21 @@
 #!/bin/bash
+set +x
+set -e
+
+echo "Checking Internet connection [Ping target is 'kde.org']: "
+ping -c 3 kde.org
+pacman -Syyu
+pacman -S --noconfirm figlet
 
 clear
 set +x
 set -e
 
-echo "======================================================="
-echo "        Welcome to BTRFSArch Install Script"
-echo "======================================================="
+echo "========================================================================================================================================================="
+echo "Welcome to"
+figlet -t -c BTRFSArch Linux
+echo "                                                                                                                                 Installer Alpha 0.18-2-1"
+echo "========================================================================================================================================================="
 echo ""
 
 echo "<< Available disks >>"
@@ -62,7 +71,7 @@ mount -o noatime,compress=zstd,subvol=@pkg "$ROOT_PART" /mnt/var/cache/pacman/pk
 mount "$BOOT_PART" /mnt/boot
 
 echo "<< Deploying System BASE >>"
-pacstrap -K /mnt base linux linux-firmware btrfs-progs sudo plasma-desktop kde-applications firefox networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber plasma-login-manager discover ki18n plasma-nm flatpak
+pacstrap -K /mnt base linux linux-firmware btrfs-progs sudo plasma-desktop plasma-welcome kde-applications firefox networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber plasma-login-manager discover ki18n plasma-nm flatpak
 
 echo "<< Generating System /etc/fstab >>"
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -83,9 +92,14 @@ echo "BTRFSArch-Linux" > /etc/hostname
 echo " |- Enabling System Daemons"
 systemctl enable NetworkManager
 systemctl enable plasmalogin
+
+
+echo "<< Auto-archchroot stage 2 >>"
+echo "root:$PASSWDUSER" | chpasswd
+
 cat << 'EOF2' > /etc/os-release
 NAME="BTRFSArch Linux"
-PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.16)"
+PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18-2-1)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
@@ -94,9 +108,6 @@ HOME_URL="about:blank"
 LOGO=archlinux
 EOF2
 
-echo "<< Auto-archchroot stage 2 >>"
-echo "root:$PASSWDUSER" | chpasswd
-
 echo "<< Installing GNU GRUB >>"
 pacman -S --needed --noconfirm grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="BTRFSArch Linux"
@@ -104,8 +115,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 useradd -m -G wheel -s /bin/bash "$NAMEUSER"
 echo "$NAMEUSER:$PASSWDUSER" | chpasswd
-chown -R "$NAMEUSER":users /nix
-chown -R "$NAMEUSER":users /root/nix.profile
 
 mkdir -p /etc/sudoers.d
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/10-installer
@@ -114,18 +123,17 @@ EOF
 echo ""
 echo "<< Unmounting FS >>"
 umount -R /mnt
-set -x
 
-echo "==BTRFSArch Linux=========================="
-echo "================================Alpha 0.16="
+echo "==BTRFSArch GNU/Linux========================================="
+echo "================================================Alpha 0.18-2-1="
 echo " Installation successful"
 echo ""
 echo " You may now restart the system."
 echo " Type in 'systemctl reboot' to restart."
-echo " There KDE Plasma is waiting."
+echo " There your Desktop is waiting."
 echo " Important notices:"
 echo " -> i live in Türkiye so it is set to trq as KBoard layout."
-echo " -> Here is a easter egg: it was meant to be 'Konqi' but i put 'KDE Plasma'."
 echo " -> Before using the AUR, don't as there are 1000+ Malware."
 echo "    (just use flatpak bro, they are sandboxed)"
-@echo on
+echo ""
+echo "=============================================================="
