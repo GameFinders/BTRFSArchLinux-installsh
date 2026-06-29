@@ -27,3 +27,6 @@ good luck.
 
 The rest of the install is up to the script.
 To fix system if it breaks, visit "https://wiki.archlinux.org".
+
+# Version Alpha 0.18
+###### New greeter & One bugfix

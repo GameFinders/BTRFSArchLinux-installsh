@@ -1,11 +1,17 @@
 #!/bin/bash
 
+echo "Checking Internet connection [Ping target is 'kde.org']: "
+ping -c 3 kde.org
+pacman -S figlet
+
 clear
 set +x
 set -e
 
 echo "======================================================="
-echo "        Welcome to BTRFSArch Install Script"
+echo "Welcome to"
+figlet -t -c BTRFSArch Linux
+echo "                                   Installer Alpha 0.18"
 echo "======================================================="
 echo ""
 
@@ -85,7 +91,7 @@ systemctl enable NetworkManager
 systemctl enable plasmalogin
 cat << 'EOF2' > /etc/os-release
 NAME="BTRFSArch Linux"
-PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.16)"
+PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
@@ -114,10 +120,9 @@ EOF
 echo ""
 echo "<< Unmounting FS >>"
 umount -R /mnt
-set -x
 
 echo "==BTRFSArch Linux=========================="
-echo "================================Alpha 0.16="
+echo "================================Alpha 0.18="
 echo " Installation successful"
 echo ""
 echo " You may now restart the system."
@@ -128,4 +133,3 @@ echo " -> i live in Türkiye so it is set to trq as KBoard layout."
 echo " -> Here is a easter egg: it was meant to be 'Konqi' but i put 'KDE Plasma'."
 echo " -> Before using the AUR, don't as there are 1000+ Malware."
 echo "    (just use flatpak bro, they are sandboxed)"
-@echo on
