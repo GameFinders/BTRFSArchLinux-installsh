@@ -28,5 +28,6 @@ good luck.
 The rest of the install is up to the script.
 To fix system if it breaks, visit "https://wiki.archlinux.org".
 
-# Version Alpha 0.18
+# Version Alpha 0.18-1
 ###### New greeter & One bugfix
+Emergency patch: now it downloads repositories before installing Greeter engine [figlet].

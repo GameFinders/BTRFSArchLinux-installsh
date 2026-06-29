@@ -2,7 +2,8 @@
 
 echo "Checking Internet connection [Ping target is 'kde.org']: "
 ping -c 3 kde.org
-pacman -S figlet
+pacman -Syyu
+pacman -S --needed --noconfirm figlet
 
 clear
 set +x
@@ -11,7 +12,7 @@ set -e
 echo "======================================================="
 echo "Welcome to"
 figlet -t -c BTRFSArch Linux
-echo "                                   Installer Alpha 0.18"
+echo "                                 Installer Alpha 0.18-1"
 echo "======================================================="
 echo ""
 
@@ -91,7 +92,7 @@ systemctl enable NetworkManager
 systemctl enable plasmalogin
 cat << 'EOF2' > /etc/os-release
 NAME="BTRFSArch Linux"
-PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18)"
+PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18-1)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
@@ -122,7 +123,7 @@ echo "<< Unmounting FS >>"
 umount -R /mnt
 
 echo "==BTRFSArch Linux=========================="
-echo "================================Alpha 0.18="
+echo "==============================Alpha 0.18-1="
 echo " Installation successful"
 echo ""
 echo " You may now restart the system."
