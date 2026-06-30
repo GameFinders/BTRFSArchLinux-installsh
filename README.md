@@ -29,4 +29,4 @@ To fix system if it breaks, visit "https://wiki.archlinux.org".
 
 # Version Alpha 0.18-2-2
 Architecture & OS Check does not exist
-Gummiboot [systemd-boot] is added instead of GNU GRUB.
+GNU GRUB returns
