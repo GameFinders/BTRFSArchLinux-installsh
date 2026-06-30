@@ -4,7 +4,7 @@ set -e
 
 echo "Checking Internet connection [Ping target is 'kde.org']: "
 ping -c 3 kde.org
-pacman -Syyu
+pacman -Syy
 pacman -S --noconfirm figlet
 
 clear
@@ -14,7 +14,7 @@ set -e
 echo "========================================================================================================================================================="
 echo "Welcome to"
 figlet -t -c BTRFSArch Linux
-echo "                                                                                                                                 Installer Alpha 0.18-2-1"
+echo "                                                                                                                                 Installer Alpha 0.18-2-2"
 echo "========================================================================================================================================================="
 echo ""
 
@@ -77,8 +77,9 @@ echo "<< Generating System /etc/fstab >>"
 genfstab -U /mnt >> /mnt/etc/fstab
 
 echo "<< Username & Password setup >>"
-read -p " |- Username: " NAMEUSER
-read -p " |- Password: " PASSWDUSER
+read -p " |- Username  : " NAMEUSER
+read -p " |- Password  : " PASSWDUSER
+read -p " |- Netw.name : " NETWORKNAME
 
 echo "<< Auto-archchroot stage 1 >>"
 echo " |- Setting timezone and clock"
@@ -86,8 +87,8 @@ arch-chroot /mnt /bin/bash <<EOF
 ln -sf /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 hwclock --systohc
 echo "KEYMAP=trq" > /etc/vconsole.conf
-echo " |- Network identity set to: BTRFSArch-Linux"
-echo "BTRFSArch-Linux" > /etc/hostname
+echo " |- Network identity set to: $NETWORKNAME"
+echo "$NETWORKNAME" > /etc/hostname
 
 echo " |- Enabling System Daemons"
 systemctl enable NetworkManager
@@ -99,7 +100,7 @@ echo "root:$PASSWDUSER" | chpasswd
 
 cat << 'EOF2' > /etc/os-release
 NAME="BTRFSArch Linux"
-PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18-2-1)"
+PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18-2-2)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
@@ -108,10 +109,23 @@ HOME_URL="about:blank"
 LOGO=archlinux
 EOF2
 
-echo "<< Installing GNU GRUB >>"
-pacman -S --needed --noconfirm grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="BTRFSArch Linux"
-grub-mkconfig -o /boot/grub/grub.cfg
+echo "<< Installing Gummiboot [systemd-boot] >>"
+bootctl install
+
+cat << 'EOF_BOOT' > /boot/loader/loader.conf
+default  arch.conf
+timeout  8
+console-mode max
+editor   no
+EOF_BOOT
+
+ROOT_UUID=$(blkid -s UUID -o value "$ROOT_PART")
+cat << EOF_ENTRY > /boot/loader/entries/arch.conf
+title   BTRFSArch Linux Alpha
+linux   /vmlinuz-linux
+initrd  /initramfs-linux.img
+options root=UUID=${ROOT_UUID} rootflags=subvol=@ rw
+EOF_ENTRY
 
 useradd -m -G wheel -s /bin/bash "$NAMEUSER"
 echo "$NAMEUSER:$PASSWDUSER" | chpasswd
@@ -125,15 +139,18 @@ echo "<< Unmounting FS >>"
 umount -R /mnt
 
 echo "==BTRFSArch GNU/Linux========================================="
-echo "================================================Alpha 0.18-2-1="
+echo "================================================Alpha 0.18-2-2="
 echo " Installation successful"
 echo ""
 echo " You may now restart the system."
 echo " Type in 'systemctl reboot' to restart."
-echo " There your Desktop is waiting."
+echo " There Konqi is waiting."
 echo " Important notices:"
 echo " -> i live in Türkiye so it is set to trq as KBoard layout."
 echo " -> Before using the AUR, don't as there are 1000+ Malware."
 echo "    (just use flatpak bro, they are sandboxed)"
+echo " -> KDE Plasma will be installed."
+echo " -> Gummiboot is installed instead of GNU GRUB starting with"
+echo "    BTRFSArch Linux Installer Alpha 0.18-2-2."
 echo ""
 echo "=============================================================="

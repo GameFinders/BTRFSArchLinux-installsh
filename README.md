@@ -27,6 +27,6 @@ then use "/mnt2/btrfsarchinstall.sh"
 The rest of the install is up to the script.
 To fix system if it breaks, visit "https://wiki.archlinux.org".
 
-# Version Alpha 0.18-2-1
-Architecture & OS Check
-Plasma Welcome Center Added
+# Version Alpha 0.18-2-2
+Architecture & OS Check does not exist
+Gummiboot [systemd-boot] is added instead of GNU GRUB.
