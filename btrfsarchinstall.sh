@@ -4,6 +4,12 @@ set -e
 
 echo "Checking Internet connection [Ping target is 'kde.org']: "
 ping -c 3 kde.org
+
+echo "Checking & Repopulating PACMAN: "
+pacman-key --init
+pacman-key --populate archlinux
+
+echo "Installing greeter engine (Figlet): "
 pacman -Syy
 pacman -S --noconfirm figlet
 
@@ -13,8 +19,8 @@ set -e
 
 echo "========================================================================================================================================================="
 echo "Welcome to"
-figlet -t -c BTRFSArch GNU+Linux
-echo "                                                                                                                                 Installer Alpha 0.18-3-1"
+figlet -t -s BTRFSArch GNU+Linux
+echo "                                                                                                                                 Installer Alpha 0.18-3-2"
 echo "========================================================================================================================================================="
 echo ""
 
@@ -36,7 +42,7 @@ if [[ ! "$CONFIRM" =~ ^[Yy]$ ]]; then
 fi
 
 clear
-figlet -t -c Partitioning disks
+figlet -t -s Partitioning disks
 parted -s "$TARGET_DISK" mklabel gpt
 
 parted -s "$TARGET_DISK" mkpart ESP fat32 1MiB 513 MiB
@@ -80,14 +86,16 @@ echo "Starting with BTRFSArch Linux Installer Alpha 0.18-3 and above, you must c
 BASE_PKGS="base linux linux-firmware btrfs-progs sudo firefox networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber flatpak"
 
 echo ""
-echo "NO #  NAME         DESCRIPTION"
-echo "   1  KDE Plasma   K Desktop Environment (version Plasma 6.7+)"
-echo "   2  LXQt         Lightweight X11 Desktop Environment (Qt)"
-echo "   3  LXDE         Lightweight X11 Desktop Environment (GTK2/GTK3)"
-echo "   4  GNOME        Definition of bloatware"
-echo "   5  Cinnamon     Cinnamon Desktop (Konsole)"
-echo "   6  Cinnamon+    Cinnamon Desktop (Kitty)"
-echo "   7  XFCE4        XFCE Desktop (fat little mouse)"
+echo "  NO #  NAME         DESCRIPTION"
+echo "     1  KDE Plasma   K Desktop Environment (version Plasma 6.7+)"
+echo "     2  LXQt         Lightweight X11 Desktop Environment (Qt)"
+echo "     3  LXDE         Lightweight X11 Desktop Environment (GTK2/GTK3)"
+echo "     4  GNOME        Definition of bloatware"
+echo "     5  Cinnamon     Cinnamon Desktop (Konsole)"
+echo "     6  Cinnamon+    Cinnamon Desktop (Kitty)"
+echo "     7  XFCE4        XFCE Desktop (fat little mouse)"
+echo "     8  Sway TWM     Sway Tiling Window Manager"
+echo " 0, 9+  TTY          No Desktop Environment (DE) or Tiling Window Manager (TWM)"
 echo "=================================================================================="
 read -p "   Choice : " DE_CHOICE_USER
 
@@ -136,7 +144,7 @@ case $DE_CHOICE_USER in
         ;;
     8)
         echo "Sway TWM Selected"
-        EXTRA_PKGS="sway swaybg swaylock swayidle waybar wofi foot wl-clipboard lightdm"
+        EXTRA_PKGS="sway swaybg swaylock swayidle waybar wofi foot wl-clipboard lightdm lightdm-gtk-greeter"
         DISPLAY_MGR="lightdm"
         DESKTOP="Sway TWM"
         ;;
@@ -146,10 +154,41 @@ case $DE_CHOICE_USER in
         DISPLAY_MGR=""
         DESKTOP="Text Teletype"
 esac
+sleep 3
 
 clear
-figlet -t -s Deploying Minimal System + DE
-pacstrap -K /mnt $BASE_PKGS $EXTRA_PKGS
+figlet -t -s Extra applications
+echo ""
+echo "  NO #  NAME                              DESCRIPTION"
+echo "     1  Krita                             better than GIMP btw"
+echo "     2  GNU Image Manipulation Program    Definition of bloatware"
+echo "     3  Fastfetch                         Quick System Information"
+echo " 0, 4+  Unlisted                          Anything unlisted"
+echo "=================================================================================="
+read -p "   Choice : " APP_CHOICE_USER
+
+case $APP_CHOICE_USER in
+    1)
+        echo "Krita selected"
+        EXTRA_PKGS_2="krita"
+        ;;
+    2)
+        echo "GIMP selected"
+        EXTRA_PKGS_2="gimp"
+        ;;
+    3)
+        echo "System Information (fastfetch) selected"
+        EXTRA_PKGS_2="fastfetch"
+        ;;
+    *)
+        read -p "Extra packages selection [pacman]: " EXTRA_PKGS_2
+        echo "Custom package or packages [$EXTRA_PKGS_2] selected."
+esac
+sleep 3
+
+clear
+figlet -t -s Deploying Minimal System + DE + Misc
+pacstrap -K /mnt $BASE_PKGS $EXTRA_PKGS $EXTRA_PKGS_2
 
 
 clear
@@ -185,7 +224,7 @@ echo "root:$PASSWDUSER" | chpasswd
 
 cat << 'EOF2' > /etc/os-release
 NAME="BTRFSArch Linux"
-PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18-3-1)"
+PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18-3-2)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
@@ -211,7 +250,7 @@ echo "<< Unmounting FS >>"
 umount -R /mnt
 
 echo "==BTRFSArch GNU/Linux========================================="
-echo "===============================================Alpha 0.18-3-1="
+echo "===============================================Alpha 0.18-3-2="
 echo " Installation successful"
 echo ""
 echo " You may now restart the system."
@@ -225,4 +264,6 @@ echo " -> a DE will or will not be installed."
 echo " -> i offered options for DE so no Arch purist can call my"
 echo "    distro 'bloat' at this point"
 echo " DE: $DESKTOP"
+echo " Installed resources for DE: $EXTRA_PKGS"
+echo " Extra packages: $EXTRA_PKGS_2"
 echo "=============================================================="

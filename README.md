@@ -26,7 +26,6 @@ then use "/mnt2/btrfsarchinstall.sh"
 The rest of the install is up to the script.
 To fix system if it breaks, visit "https://wiki.archlinux.org".
 
-# Version Alpha 0.18-3-1
-Subversion -3-1 fixes GNOME issues
-New DE Choices added: XFCE; Sway TWM
-Note: LightDM on Sway may say "[FAILED] Failed to start Light Display Manager." instead of starting LightDM.
+# Version Alpha 0.18-3-2
+Subversion -3-2 fixes Sway LightDM issue
+Subversion -3-2 repopulates Arch Linux GPG of PACMAN Package Manager.
