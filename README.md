@@ -14,8 +14,7 @@ then run the command: fastfetch
 First use "mkdir /mnt2" then mount /dev/sdX1 [Ext. USB containing file named "btrfsarchinstall.sh"]
 
 or use GitHub
-Link should be "https://github.com/GameFinders/BTRFSArchLinux-installsh.git" for GitHub file.
-good luck.
+Use "curl -fLO http://raw.githubusercontent.com/GameFinders/BTRFSArchLinux-installlsh/main/btrfsarchinstall.sh && sudo bash btrfsarchinstall.sh" and the installer will start.
 
 # 2. chmod +x the SH file
 
@@ -27,6 +26,6 @@ then use "/mnt2/btrfsarchinstall.sh"
 The rest of the install is up to the script.
 To fix system if it breaks, visit "https://wiki.archlinux.org".
 
-# Version Alpha 0.18-3
-DE Choices!
-(Emergency Patch 01 in 0.18 Subversion 3: case ERROR (Fixed))
+# Version Alpha 0.18-3-1
+Subversion -3-1 fixes GNOME issues
+New DE Choices added: XFCE; Sway TWM

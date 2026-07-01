@@ -14,7 +14,7 @@ set -e
 echo "========================================================================================================================================================="
 echo "Welcome to"
 figlet -t -c BTRFSArch GNU+Linux
-echo "                                                                                                                                   Installer Alpha 0.18-3"
+echo "                                                                                                                                 Installer Alpha 0.18-3-1"
 echo "========================================================================================================================================================="
 echo ""
 
@@ -76,7 +76,7 @@ mount "$BOOT_PART" /mnt/boot
 
 clear
 figlet -t -s Desktop Environment
-echo "Starting with BTRFSArch Linux Installer Alpha 0.18-3, you must choose a Desktop environment so anyone who doesn't want KDE Plasma will get something else instead."
+echo "Starting with BTRFSArch Linux Installer Alpha 0.18-3 and above, you must choose a Desktop environment so anyone who doesn't want KDE Plasma will get something else instead."
 BASE_PKGS="base linux linux-firmware btrfs-progs sudo firefox networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber flatpak"
 
 echo ""
@@ -87,6 +87,7 @@ echo "   3  LXDE         Lightweight X11 Desktop Environment (GTK2/GTK3)"
 echo "   4  GNOME        Definition of bloatware"
 echo "   5  Cinnamon     Cinnamon Desktop (Konsole)"
 echo "   6  Cinnamon+    Cinnamon Desktop (Kitty)"
+echo "   7  XFCE4        XFCE Desktop (fat little mouse)"
 echo "=================================================================================="
 read -p "   Choice : " DE_CHOICE_USER
 
@@ -113,7 +114,7 @@ case $DE_CHOICE_USER in
         echo "Definition of bloatware selected"
         EXTRA_PKGS="gnome gnome-extra gdm"
         DISPLAY_MGR="gdm"
-        DESKTOP="Bloat"
+        DESKTOP="Definition of Bloatware"
         ;;
     5)
         echo "Cinnamon w/ KDE Konsole selected"
@@ -126,6 +127,18 @@ case $DE_CHOICE_USER in
         EXTRA_PKGS="cinnamon nemo-fileroller cinnamon-translations kitty lightdm lightdm-gtk-greeter"
         DISPLAY_MGR="lightdm"
         DESKTOP="Cinnamon"
+        ;;
+    7)
+        echo "Fat mouse selected"
+        EXTRA_PKGS="xfce4 xfce4-goodies xfwm4 xfce4-panel xfdesktop xfce4-session xfce4-settings xfconf thunar xfce4-terminal xfce4-appfinder lxpolkit lightdm lightdm-gtk-greeter"
+        DISPLAY_MGR="lightdm"
+        DESKTOP="fat mouse"
+        ;;
+    8)
+        echo "Sway TWM Selected"
+        EXTRA_PKGS="sway swaybg swaylock swayidle waybar wofi foot wl-clipboard lightdm"
+        DISPLAY_MGR="lightdm"
+        DESKTOP="Sway TWM"
         ;;
     *)
         echo "TTY Selected"
@@ -172,7 +185,7 @@ echo "root:$PASSWDUSER" | chpasswd
 
 cat << 'EOF2' > /etc/os-release
 NAME="BTRFSArch Linux"
-PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18-2-2)"
+PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18-3-1)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
@@ -198,7 +211,7 @@ echo "<< Unmounting FS >>"
 umount -R /mnt
 
 echo "==BTRFSArch GNU/Linux========================================="
-echo "=================================================Alpha 0.18-3="
+echo "===============================================Alpha 0.18-3-1="
 echo " Installation successful"
 echo ""
 echo " You may now restart the system."
