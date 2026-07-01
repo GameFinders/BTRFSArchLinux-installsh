@@ -96,37 +96,43 @@ case $DE_CHOICE_USER in
         EXTRA_PKGS="plasma-desktop plasma-welcome kde-applications plasma-login-manager discover ki18n plasma-nm"
         DISPLAY_MGR="plasmalogin"
         DESKTOP="KDE"
+        ;;
     2)
         echo "LXQt Selected"
         EXTRA_PKGS="lxqt openbox qterminal breeze-icons sddm"
         DISPLAY_MGR="sddm"
         DESKTOP="LXDE (Qt)"
+        ;;
     3)
         echo "LXDE Selected"
         EXTRA_PKGS="lxde-common lxsession openbox lxde lxdm"
         DISPLAY_MGR="lxdm"
         DESKTOP="LXDE (GTK2/GTK3)"
+        ;;
     4)
         echo "Definition of bloatware selected"
         EXTRA_PKGS="gnome gnome-extra gdm"
         DISPLAY_MGR="gdm"
         DESKTOP="Bloat"
+        ;;
     5)
         echo "Cinnamon w/ KDE Konsole selected"
         EXTRA_PKGS="cinnamon nemo-fileroller cinnamon-translations konsole lightdm lightdm-gtk-greeter"
         DISPLAY_MGR="lightdm"
         DESKTOP="Cinnamon"
+        ;;
     6)
         echo "Cinnamon w/ Hyprland Kitty selected"
         EXTRA_PKGS="cinnamon nemo-fileroller cinnamon-translations kitty lightdm lightdm-gtk-greeter"
         DISPLAY_MGR="lightdm"
         DESKTOP="Cinnamon"
+        ;;
     *)
         echo "TTY Selected"
         EXTRA_PKGS="lynx"
         DISPLAY_MGR=""
         DESKTOP="Text Teletype"
-case
+esac
 
 clear
 figlet -t -s Deploying Minimal System + DE
@@ -205,5 +211,5 @@ echo "    (just use flatpak bro, they are sandboxed)"
 echo " -> a DE will or will not be installed."
 echo " -> i offered options for DE so no Arch purist can call my"
 echo "    distro 'bloat' at this point"
-echo ""
+echo " DE: $DESKTOP"
 echo "=============================================================="

@@ -29,3 +29,4 @@ To fix system if it breaks, visit "https://wiki.archlinux.org".
 
 # Version Alpha 0.18-3
 DE Choices!
+(Emergency Patch 01 in 0.18 Subversion 3: case ERROR (Fixed))
