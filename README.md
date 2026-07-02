@@ -26,6 +26,9 @@ then use "/mnt2/btrfsarchinstall.sh"
 The rest of the install is up to the script.
 To fix system if it breaks, visit "https://wiki.archlinux.org".
 
-# Version Alpha 0.18-3-3
-Subversion -3-3 fixes KDE Welcome "about:blank" issue
-###### Subversion -3-3 also sends you to GitHub repository if you try to "learn more about BTRFSArch Linux".
+# Version Alpha 0.19
+From now on, File "btrfsarchinstall.sh" is licensed under GNU License GPL v3. (Surprise: we made sure the script installs Arch linux package: kinfocenter)
+
+# The "GNU-ification" of BTRFSArch Linux
+it is not "Linux", it is "GNU/Linux" or "GNU+Linux". Linux is merely the kernel.
+###### (and the script is finally licensed under GNU GPL btw.)

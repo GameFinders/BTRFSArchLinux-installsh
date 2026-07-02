@@ -1,4 +1,16 @@
 #!/bin/bash
+#
+# Copyright (C) 2026 GameFinders
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
 set +x
 set -e
 
@@ -20,7 +32,7 @@ set -e
 echo "========================================================================================================================================================="
 echo "Welcome to"
 figlet -t -s BTRFSArch GNU+Linux
-echo "                                                                                                                                 Installer Alpha 0.18-3-3"
+echo "                                                                                                                                     Installer Alpha 0.19"
 echo "========================================================================================================================================================="
 echo ""
 
@@ -86,7 +98,7 @@ sleep 1
 
 clear
 figlet -t -s Desktop Environment
-echo "Starting with BTRFSArch Linux Installer Alpha 0.18-3 and above, you must choose a Desktop environment so anyone who doesn't want KDE Plasma will get something else instead."
+echo "Starting with BTRFSArch GNU+Linux Installer Alpha 0.18-3 and above, you must choose a Desktop environment so anyone who doesn't want KDE Plasma will get something else instead."
 BASE_PKGS="base linux linux-firmware btrfs-progs sudo firefox networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber flatpak"
 
 echo ""
@@ -94,19 +106,19 @@ echo "  NO #  NAME         DESCRIPTION"
 echo "     1  KDE Plasma   K Desktop Environment (version Plasma 6.7+)"
 echo "     2  LXQt         Lightweight X11 Desktop Environment (Qt)"
 echo "     3  LXDE         Lightweight X11 Desktop Environment (GTK2/GTK3)"
-echo "     4  GNOME        Definition of bloatware"
+echo "     4  GNOME        GNOME Desktop (version 50+)"
 echo "     5  Cinnamon     Cinnamon Desktop (Konsole)"
 echo "     6  Cinnamon+    Cinnamon Desktop (Kitty)"
-echo "     7  XFCE4        XFCE Desktop (fat little mouse)"
+echo "     7  XFCE4        XFCE Desktop"
 echo "     8  Sway TWM     Sway Tiling Window Manager"
-echo " 0, 9+  TTY          No Desktop Environment (DE) or Tiling Window Manager (TWM)"
+echo " 0, 9+  Unlisted     Unlisted / Custom DE"
 echo "=================================================================================="
 read -p "   Choice : " DE_CHOICE_USER
 
 case $DE_CHOICE_USER in
     1)
         echo "K Desktop Environment Plasma Selected"
-        EXTRA_PKGS="plasma-desktop plasma-welcome kde-applications plasma-login-manager discover ki18n plasma-nm"
+        EXTRA_PKGS="plasma-desktop plasma-welcome kde-applications plasma-login-manager discover ki18n plasma-nm kinfocenter"
         DISPLAY_MGR="plasmalogin"
         DESKTOP="KDE"
         ;;
@@ -123,7 +135,7 @@ case $DE_CHOICE_USER in
         DESKTOP="LXDE (GTK2/GTK3)"
         ;;
     4)
-        echo "Definition of bloatware selected"
+        echo "GNOME selected"
         EXTRA_PKGS="gnome gnome-extra gdm"
         DISPLAY_MGR="gdm"
         DESKTOP="Definition of Bloatware"
@@ -141,7 +153,7 @@ case $DE_CHOICE_USER in
         DESKTOP="Cinnamon"
         ;;
     7)
-        echo "Fat mouse selected"
+        echo "XFCE selected"
         EXTRA_PKGS="xfce4 xfce4-goodies xfwm4 xfce4-panel xfdesktop xfce4-session xfce4-settings xfconf thunar xfce4-terminal xfce4-appfinder lxpolkit lightdm lightdm-gtk-greeter"
         DISPLAY_MGR="lightdm"
         DESKTOP="fat mouse"
@@ -153,11 +165,10 @@ case $DE_CHOICE_USER in
         DESKTOP="Sway TWM"
         ;;
     *)
-        echo "TTY Selected"
-        EXTRA_PKGS="lynx"
-        DISPLAY_MGR=""
-        DESKTOP="Text Teletype"
-esac
+        read -p "DE Resources [pacman Applications]: " EXTRA_PKGS
+        read -p "Display manager [systemd Service]: " DISPLAY_MGR
+        echo "Unlisted DE selected"
+        DESKTOP="Unlisted desktop"
 sleep 3
 
 clear
@@ -226,8 +237,8 @@ echo "<< Auto-archchroot stage 2 >>"
 echo "root:$PASSWDUSER" | chpasswd
 
 cat << 'EOF2' > /etc/os-release
-NAME="BTRFSArch Linux"
-PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18-3-3)"
+NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19)"
+PRETTY_NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
@@ -238,7 +249,7 @@ EOF2
 
 echo "<< Installing GNU GRUB >>"
 pacman -S --needed --noconfirm grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="BTRFSArch Linux"
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="BTRFSArch GNU+Linux"
 grub-mkconfig -o /boot/grub/grub.cfg
 
 useradd -m -G wheel -s /bin/bash "$NAMEUSER"
@@ -248,12 +259,13 @@ mkdir -p /etc/sudoers.d
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers.d/10-installer
 EOF
 
-echo ""
-echo "<< Unmounting FS >>"
+clear
+figlet -t -s Unmounting CHROOT FS
 umount -R /mnt
 
+clear
 echo "==BTRFSArch GNU/Linux========================================="
-echo "===============================================Alpha 0.18-3-3="
+echo "===================================================Alpha 0.19="
 echo " Installation successful"
 echo ""
 echo " You may now restart the system."
@@ -266,6 +278,8 @@ echo "    (just use flatpak bro, they are sandboxed)"
 echo " -> a DE will or will not be installed."
 echo " -> i offered options for DE so no Arch purist can call my"
 echo "    distro 'bloat' at this point"
+echo " -> Starting with BTRFSArch GNU+Linux 0.19 Alpha; Install script"
+echo "    (btrfsarchinstall.sh) is licensed under GNU License GPL."
 echo " DE: $DESKTOP"
 echo " Installed resources for DE: $EXTRA_PKGS"
 echo " Extra packages: $EXTRA_PKGS_2"
