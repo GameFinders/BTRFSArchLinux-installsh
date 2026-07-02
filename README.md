@@ -26,6 +26,6 @@ then use "/mnt2/btrfsarchinstall.sh"
 The rest of the install is up to the script.
 To fix system if it breaks, visit "https://wiki.archlinux.org".
 
-# Version Alpha 0.18-3-2
-Subversion -3-2 fixes Sway LightDM issue
-Subversion -3-2 repopulates Arch Linux GPG of PACMAN Package Manager.
+# Version Alpha 0.18-3-3
+Subversion -3-3 fixes KDE Welcome "about:blank" issue
+###### Subversion -3-3 also sends you to GitHub repository if you try to "learn more about BTRFSArch Linux".

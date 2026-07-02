@@ -20,7 +20,7 @@ set -e
 echo "========================================================================================================================================================="
 echo "Welcome to"
 figlet -t -s BTRFSArch GNU+Linux
-echo "                                                                                                                                 Installer Alpha 0.18-3-2"
+echo "                                                                                                                                 Installer Alpha 0.18-3-3"
 echo "========================================================================================================================================================="
 echo ""
 
@@ -56,11 +56,13 @@ else
     BOOT_PART="${TARGET_DISK}1"
     ROOT_PART="${TARGET_DISK}2"
 fi
+sleep 1
 
 clear
 figlet -t -s Formatting partitions
 mkfs.vfat -F 32 "$BOOT_PART"
 mkfs.btrfs -f -L "BTRFSArch_RootFS" "$ROOT_PART"
+sleep 1
 
 clear
 figlet -t -s Creating BTRFS Subvolumes
@@ -70,6 +72,7 @@ btrfs subvolume create /mnt/@home
 btrfs subvolume create /mnt/@log
 btrfs subvolume create /mnt/@pkg
 umount /mnt
+sleep 1
 
 clear
 figlet -t -s Mounting filesystems
@@ -79,6 +82,7 @@ mount -o noatime,compress=zstd,subvol=@home "$ROOT_PART" /mnt/home
 mount -o noatime,compress=zstd,subvol=@log "$ROOT_PART" /mnt/var/log
 mount -o noatime,compress=zstd,subvol=@pkg "$ROOT_PART" /mnt/var/cache/pacman/pkg
 mount "$BOOT_PART" /mnt/boot
+sleep 1
 
 clear
 figlet -t -s Desktop Environment
@@ -189,11 +193,12 @@ sleep 3
 clear
 figlet -t -s Deploying Minimal System + DE + Misc
 pacstrap -K /mnt $BASE_PKGS $EXTRA_PKGS $EXTRA_PKGS_2
-
+sleep 1
 
 clear
-echo "<< Generating System /etc/fstab >>"
+figlet -t -s Generating FSTAB
 genfstab -U /mnt >> /mnt/etc/fstab
+sleep 1
 
 clear
 figlet -t -s Username Setup
@@ -213,8 +218,6 @@ echo "KEYMAP=trq" > /etc/vconsole.conf
 echo " |- Network identity set to: $NETWORKNAME"
 echo "$NETWORKNAME" > /etc/hostname
 
-echo " |- Installing DE [nothing may happen if none selected]"
-
 echo " |- Enabling System Daemons"
 systemctl enable NetworkManager
 systemctl enable $DISPLAY_MGR
@@ -224,12 +227,12 @@ echo "root:$PASSWDUSER" | chpasswd
 
 cat << 'EOF2' > /etc/os-release
 NAME="BTRFSArch Linux"
-PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18-3-2)"
+PRETTY_NAME="BTRFSArch Linux (installed via Installer Alpha 0.18-3-3)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
 ANSI_COLOR="38;2;23;147;209"
-HOME_URL="about:blank"
+HOME_URL="https://github.com/GameFinders/BTRFSArchLinux-installsh"
 LOGO=archlinux
 EOF2
 
@@ -250,7 +253,7 @@ echo "<< Unmounting FS >>"
 umount -R /mnt
 
 echo "==BTRFSArch GNU/Linux========================================="
-echo "===============================================Alpha 0.18-3-2="
+echo "===============================================Alpha 0.18-3-3="
 echo " Installation successful"
 echo ""
 echo " You may now restart the system."
