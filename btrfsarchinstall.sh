@@ -169,6 +169,7 @@ case $DE_CHOICE_USER in
         read -p "Display manager [systemd Service]: " DISPLAY_MGR
         echo "Unlisted DE selected"
         DESKTOP="Unlisted desktop"
+esac
 sleep 3
 
 clear
