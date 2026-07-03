@@ -237,15 +237,19 @@ systemctl enable $DISPLAY_MGR
 echo "<< Auto-archchroot stage 2 >>"
 echo "root:$PASSWDUSER" | chpasswd
 
+curl -fLO https://raw.githubusercontent.com/GameFinders/BTRFSArchLinux-installsh/main/btrfsarchlinux.png
+mkdir /usr/share/icons
+mv btrfsarchlinux.png /usr/share/icons/btrfsarchlinux.png
+
 cat << 'EOF2' > /etc/os-release
-NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19)"
-PRETTY_NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19)"
+NAME="BTRFSArch GNU+Linux"
+PRETTY_NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19-1)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
 ANSI_COLOR="38;2;23;147;209"
 HOME_URL="https://github.com/GameFinders/BTRFSArchLinux-installsh"
-LOGO=archlinux
+LOGO="/usr/share/icons/btrfsarchlinux.png"
 EOF2
 
 echo "<< Installing GNU GRUB >>"
@@ -266,7 +270,7 @@ umount -R /mnt
 
 clear
 echo "==BTRFSArch GNU/Linux========================================="
-echo "===================================================Alpha 0.19="
+echo "=================================================Alpha 0.19-1="
 echo " Installation successful"
 echo ""
 echo " You may now restart the system."
@@ -281,6 +285,8 @@ echo " -> i offered options for DE so no Arch purist can call my"
 echo "    distro 'bloat' at this point"
 echo " -> Starting with BTRFSArch GNU+Linux 0.19 Alpha; Install script"
 echo "    (btrfsarchinstall.sh) is licensed under GNU License GPL."
+echo " -> Starting with BTRFSArch GNU+Linux 0.19 Alpha subversion 1;"
+echo "    there will be a artwork on the File named 'btrfsarchlinux.png'."
 echo " DE: $DESKTOP"
 echo " Installed resources for DE: $EXTRA_PKGS"
 echo " Extra packages: $EXTRA_PKGS_2"

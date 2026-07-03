@@ -26,9 +26,8 @@ then use "/mnt2/btrfsarchinstall.sh"
 The rest of the install is up to the script.
 To fix system if it breaks, visit "https://wiki.archlinux.org".
 
-# Version Alpha 0.19
-From now on, File "btrfsarchinstall.sh" is licensed under GNU License GPL v3. (Surprise: we made sure the script installs Arch linux package: kinfocenter)
+# Version Alpha 0.19-1
+Included Artwork and fixed kinfocenter "Logo not found" problem.
 
 # The "GNU-ification" of BTRFSArch Linux
 it is not "Linux", it is "GNU/Linux" or "GNU+Linux". Linux is merely the kernel.
-###### (and the script is finally licensed under GNU GPL btw.)
