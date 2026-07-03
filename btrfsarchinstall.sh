@@ -11,6 +11,106 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
+echo "TROLL START..."
+sleep 5
+clear
+echo """
+
+
+
+
+
+
+
+
+                                                                             .:..
+                                                                          :=..=.
+                                                                       :=:...+.
+                                                                     :#.....-
+                                                                   .+.....+-
+                                                                  :#.....#:
+                                                             ..  -:.....+
+                                                          :=:=--+.....--
+                                                        :*...#*%.....#:
+                                                       -.....@@.....%-                 :----:.
+                                                      .#.....:....*@@#+====.        :=.......=:
+                                                      .%......................... :=..::::..:-.
+                                                      .%....................#-:  -*.::::..:=:
+              .::=--                                  .%.......*==+#=...*=+    :+..:::..+=:
+              :-....%*:.    .-------:::------:        -#.....#-    +#@@*      :*.::::.+=:
+              .*..@....*+-=..............::::.-:::   :#.....#:    :+....=:   :*......%+
+              :#..@.-@@:..:::::::::::*@@:.    #@..=-+=.....%      :..:.:--: :=.:@@@@@%+
+              .*..@@:..:::..::::::::@     @@@@@  @:.%#.....-      :-.:---:+-=#@........*:
+              =%@-:.:::::...:::::::@    @@@*+%@@@  ::+@..*-       :@.:----:**-...:::::..+.
+             :#...:::::::::::::::.@    @@**+@@    @ -::%#:        -+.:.=--:#::%@@::::=:.%:
+            -:.:::::::::::::::::::@    @**+@%@    @. -.:+        :*.:::..-##:@...::::::.+:
+          :+..:::::::::::::::::::::   @@*+@%%@@@@@%@ ::.#:      :*.:::::.-%-%-....:::::.*.
+         -:.:::::::::::::::::::::--   +@*+@%%%%%%@+%@::..-      -..:::::.:--+-.@@@:::::.=
+        -..:::::::::::::::::::::::-    @**+@%%%%%%@#@.::.*.    :*.::::::.=:-%%@...::::.=:
+       -.:::::::::::::::::::::::::-    @@*+@%%%%%%@%.:::.#:   :*.:::::::::...#:...::::.*.
+      -.::::::::::::::::::::::::::-.    @**=@%%@@@@.::::.#:  :#.:::::::::::.*+-.-+.::..:
+     ::.:::::::::::::::::::::::::::=    @@*+%@@@:...::::.#--+..:::::::::::..-@---@@..-:
+    :#.::::::::::::::::::::::::::::--    @@@@*...::::::.*##-.:::::::::...:=------:--#:
+    -.::::::::::::::::::::::::::::::-     ....::::::::..%%..::::::....=----------::=
+   :#.::::::::::::::..::::::::::::::-= ==--:::::::::...@:.:::::...------------:::=.
+   :.::::::::::::::.==.:::::::::---::---:::::::::::..@@..:::...=-----------:::=:.
+   -.::::::::::::::.==::::::::--= #-:::::::::::::..%@:.:::..=-----------::-*=:
+   -.:::::::...:::::...::::::--   #=::::::::::::##%:..:...=----------::-*=+##
+   -.:::::::-==.:::::::::::--#######-::::::::=##**.....-----------::-*++###+
+   ::.::::::.:=.:::::::::--###*----+=:::::::###+....------------:-*=+####*+
+   .#.:::::::::::::::::--###*--====+=::-%%%###+:-------------::-++####****+++-
+    :..:::::::::::::--=##*+*-====---@@@#*+#*#=-------------:-*=####*****#*****+===
+     -.:::::::::::--###*++*-==-=+@@@*++++%###-:------------*=###****#*************+==
+      -..::.::::-:###++++*--=+@@  #+++++%###------------:-=###***********************+=
+       :+..::::####*+++++:=@@*   ##+++#%+*% -----------:+=#***************************+=--
+         :*...::--+###*++@@     ##+++++**%#:-----------:+##********######*###******+==
+           :--=...::-=%@*#     :#+++++#*%% =----------:*=#****###******###%+=#***#*
+                -=+*%@ ###     #*++++#*#% .=-----------=##***********##*#...+=%# :+=--:.
+                  #%   ##     ##++++#*#%..+=...------:+##*****#****##+#...:.=+++*......-
+                 =+#    .    #########%...:.:::..---:+-+++++++*##%#*#..::::.#+.....::-%=-:.....
+                  *##            ..  %...::::::::.--:-          =+*..::..::%###%%%#%==#**-:-:%-
+               .:-#%@-          :.  %%.  -::::::::.-#:           +....:*%%==------------=====%+:
+             -=::-#**#       ....  *% .. -:::::::::.%:          ....@%+=---------------------::::::
+     .:::..::::---=####     -######% ... -:::::::::.=-         :=%%*=-------------------------:::::.
+     .::::----------=####..:. ####% .... ::::::::::..*:    .::-*-----------------------:::::..::::
+      :::::::----------###      #% ...... -::::::::::.==::::::----------------------:::::::
+         :=+#:----:::*#*=%#+    % ....... -:::::::::::..%-:------------------------:-=.
+           :#:-:::::- #.:-%%#  %. ....... -::::::::::::..------------------------::=
+           :-::=::   ++.-.. %%% ......... -::::::::::::::.----------------------:*:
+            ::.     :*.:-...   ............:::::::::::::::.---------------------*.
+                   :+.::-................. -:::::::::::::::.------------------ *
+                  :+.:::: ................ -::::::::::::::::.--------------== +
+                 :*.::::- ................. -::::::::::::::::.-----------=+  -
+                 *.:::::- ................. -:::::::::::::::::.%------==+.  =
+                -.::::::- .................. -:::::::::::::::::.@--==+... --
+               :#.:::::::=. ................ -::::::::::::::::::.@.......*
+               =.:::::::::@................. .::::::::::::::::::.-@.. :+:
+              :+.::::::::::@@..............:..@::::::::::::::::::.@+#+:
+              =.:::::::::::..@#*.......:::.....@..::::::::::::::::.%-
+             :#.:::::::::::..-.  :====   .....  %-.::::::::::::::::.=
+             -.:::::::::...+:           -======-:-#.:::::::::::::::.*:
+            :#.:::::::...=:                        +..:::::::::::::..*:
+           --.::::..::@%                            %@..::::::::::::..#
+         . #...::-@@@                                 @@..:::::::::::.@-           .      ..
+       .    :---                ..                      @@:::::::::::..@          ..
+                                 .....           .        =@:.::::::::.##  .
+                                                 ..    :    @@..::::::..@.
+                                                       .      @#.::::::.@.
+                                                           .   %@..:::..#
+                                                              .  %-....+*
+                                                                  .----
+
+
+
+
+
+
+
+
+============================ Invaded by Konqi the KDE Dragon ==============================================================================
+==================================================================================== and Kiki the Krita Cybersquirrel =====================
+================================================ 20:30 -- 21:30 ===========================================================================
+"""
 set +x
 set -e
 
@@ -26,13 +126,11 @@ pacman -Syy
 pacman -S --noconfirm figlet
 
 clear
-set +x
-set -e
 
 echo "========================================================================================================================================================="
 echo "Welcome to"
-figlet -t -s BTRFSArch GNU+Linux
-echo "                                                                                                                                     Installer Alpha 0.19"
+figlet -t -s [Redacted by Konqi the KDE Dragon]
+echo "                                                                                                                                     Installer Alpha 0.e60h"
 echo "========================================================================================================================================================="
 echo ""
 
@@ -98,107 +196,55 @@ sleep 1
 
 clear
 figlet -t -s Desktop Environment
-echo "Starting with BTRFSArch GNU+Linux Installer Alpha 0.18-3 and above, you must choose a Desktop environment so anyone who doesn't want KDE Plasma will get something else instead."
+echo "Starting with [Redacted by Konqi the KDE Dragon][Redacted by Kiki the Krita Cybersquirrel] Installer Alpha 0.18-3 and above, you must choose a Desktop environment so anyone who doesn't want KDE Plasma will GET KDE ANYWAY."
 BASE_PKGS="base linux linux-firmware btrfs-progs sudo firefox networkmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack wireplumber flatpak"
 
 echo ""
 echo "  NO #  NAME         DESCRIPTION"
-echo "     1  KDE Plasma   K Desktop Environment (version Plasma 6.7+)"
-echo "     2  LXQt         Lightweight X11 Desktop Environment (Qt)"
-echo "     3  LXDE         Lightweight X11 Desktop Environment (GTK2/GTK3)"
-echo "     4  GNOME        GNOME Desktop (version 50+)"
-echo "     5  Cinnamon     Cinnamon Desktop (Konsole)"
-echo "     6  Cinnamon+    Cinnamon Desktop (Kitty)"
-echo "     7  XFCE4        XFCE Desktop"
-echo "     8  Sway TWM     Sway Tiling Window Manager"
-echo " 0, 9+  Unlisted     Unlisted / Custom DE"
+echo "     1  KDE Plasma   [Redacted by Konqi the KDE Dragon]"
+echo "     2  LXQt         [Redacted by Konqi the KDE Dragon]"
+echo "     3  LXDE         [Redacted by Konqi the KDE Dragon]"
+echo "     4  GNOME        [Redacted by Konqi the KDE Dragon]"
+echo "     5  Cinnamon     [Redacted by Konqi the KDE Dragon]"
+echo "     6  Cinnamon+    [Redacted by Konqi the KDE Dragon]"
+echo "     7  XFCE4        [Redacted by Konqi the KDE Dragon]"
+echo "     8  Sway TWM     [Redacted by Konqi the KDE Dragon]"
+echo " 0, 9+  Unlisted     [Redacted by Konqi the KDE Dragon]"
 echo "=================================================================================="
 read -p "   Choice : " DE_CHOICE_USER
 
 case $DE_CHOICE_USER in
-    1)
-        echo "K Desktop Environment Plasma Selected"
-        EXTRA_PKGS="plasma-desktop plasma-welcome kde-applications plasma-login-manager discover ki18n plasma-nm kinfocenter"
-        DISPLAY_MGR="plasmalogin"
-        DESKTOP="KDE"
-        ;;
-    2)
-        echo "LXQt Selected"
-        EXTRA_PKGS="lxqt openbox qterminal breeze-icons sddm"
-        DISPLAY_MGR="sddm"
-        DESKTOP="LXDE (Qt)"
-        ;;
-    3)
-        echo "LXDE Selected"
-        EXTRA_PKGS="lxde-common lxsession openbox lxde lxdm"
-        DISPLAY_MGR="lxdm"
-        DESKTOP="LXDE (GTK2/GTK3)"
-        ;;
-    4)
-        echo "GNOME selected"
-        EXTRA_PKGS="gnome gnome-extra gdm"
-        DISPLAY_MGR="gdm"
-        DESKTOP="Definition of Bloatware"
-        ;;
-    5)
-        echo "Cinnamon w/ KDE Konsole selected"
-        EXTRA_PKGS="cinnamon nemo-fileroller cinnamon-translations konsole lightdm lightdm-gtk-greeter"
-        DISPLAY_MGR="lightdm"
-        DESKTOP="Cinnamon"
-        ;;
-    6)
-        echo "Cinnamon w/ Hyprland Kitty selected"
-        EXTRA_PKGS="cinnamon nemo-fileroller cinnamon-translations kitty lightdm lightdm-gtk-greeter"
-        DISPLAY_MGR="lightdm"
-        DESKTOP="Cinnamon"
-        ;;
-    7)
-        echo "XFCE selected"
-        EXTRA_PKGS="xfce4 xfce4-goodies xfwm4 xfce4-panel xfdesktop xfce4-session xfce4-settings xfconf thunar xfce4-terminal xfce4-appfinder lxpolkit lightdm lightdm-gtk-greeter"
-        DISPLAY_MGR="lightdm"
-        DESKTOP="fat mouse"
-        ;;
-    8)
-        echo "Sway TWM Selected"
-        EXTRA_PKGS="sway swaybg swaylock swayidle waybar wofi foot wl-clipboard lightdm lightdm-gtk-greeter"
-        DISPLAY_MGR="lightdm"
-        DESKTOP="Sway TWM"
+    1|2|3|4|5|6|7|8)
+        echo "[Redacted by Konqi the KDE Dragon]"
         ;;
     *)
-        read -p "DE Resources [pacman Applications]: " EXTRA_PKGS
-        read -p "Display manager [systemd Service]: " DISPLAY_MGR
-        echo "Unlisted DE selected"
-        DESKTOP="Unlisted desktop"
+        echo "nice try but [Redacted by Konqi the KDE Dragon]"
 esac
+EXTRA_PKGS="plasma-desktop plasma-welcome kde-applications plasma-login-manager discover ki18n plasma-nm kinfocenter"
+DISPLAY_MGR="plasmalogin"
+DESKTOP="[Redacted by Konqi the KDE Dragon]"
 sleep 3
 
 clear
 figlet -t -s Extra applications
 echo ""
 echo "  NO #  NAME                              DESCRIPTION"
-echo "     1  Krita                             better than GIMP btw"
-echo "     2  GNU Image Manipulation Program    Definition of bloatware"
-echo "     3  Fastfetch                         Quick System Information"
-echo " 0, 4+  Unlisted                          Anything unlisted"
+echo "     1  Krita                             [Redacted by Kiki the Krita Cybersquirrel]"
+echo "     2  GNU Image Manipulation Program    [Redacted by Kiki the Krita Cybersquirrel]"
+echo "     3  Fastfetch                         [Redacted by Kiki the Krita Cybersquirrel]"
+echo " 0, 4+  Unlisted                          [Redacted by Kiki the Krita Cybersquirrel]"
 echo "=================================================================================="
 read -p "   Choice : " APP_CHOICE_USER
 
 case $APP_CHOICE_USER in
-    1)
-        echo "Krita selected"
+    1|2|3)
+        echo "[Redacted by Kiki the Krita Cybersquirrel]"
         EXTRA_PKGS_2="krita"
         ;;
-    2)
-        echo "GIMP selected"
-        EXTRA_PKGS_2="gimp"
-        ;;
-    3)
-        echo "System Information (fastfetch) selected"
-        EXTRA_PKGS_2="fastfetch"
-        ;;
     *)
-        read -p "Extra packages selection [pacman]: " EXTRA_PKGS_2
-        echo "Custom package or packages [$EXTRA_PKGS_2] selected."
+        read -p "Extra packages selection [pacman]: " USELESS
+        echo "Custom package or packages [Redacted by Kiki the Krita Cybersquirrel] ARE NOT SELECTED."
+        EXTRA_PKGS_2="krita"
 esac
 sleep 3
 
@@ -213,8 +259,8 @@ genfstab -U /mnt >> /mnt/etc/fstab
 sleep 1
 
 clear
-figlet -t -s Username Setup
-echo "[Note: User created will be a Super user (wheel Group).]"
+figlet -t -s [Redacted by Qt Mascots]
+echo "[Note: [Redacted by Konqi the KDE Dragon][Redacted by Kiki the Krita Cybersquirrel].]"
 read -p " |- Username  : " NAMEUSER
 read -p " |- Password  : " PASSWDUSER
 read -p " |- Netw.name : " NETWORKNAME
@@ -227,8 +273,8 @@ arch-chroot /mnt /bin/bash <<EOF
 ln -sf /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 hwclock --systohc
 echo "KEYMAP=trq" > /etc/vconsole.conf
-echo " |- Network identity set to: $NETWORKNAME"
-echo "$NETWORKNAME" > /etc/hostname
+echo " |- Network identity set to: [Redacted by Konqi the KDE Dragon]"
+echo "Konqi-PC" > /etc/hostname
 
 echo " |- Enabling System Daemons"
 systemctl enable NetworkManager
@@ -238,23 +284,23 @@ echo "<< Auto-archchroot stage 2 >>"
 echo "root:$PASSWDUSER" | chpasswd
 
 curl -fLO https://raw.githubusercontent.com/GameFinders/BTRFSArchLinux-installsh/main/btrfsarchlinux.png
-mkdir /usr/share/icons
+mkdir -p /usr/share/icons
 mv btrfsarchlinux.png /usr/share/icons/btrfsarchlinux.png
 
 cat << 'EOF2' > /etc/os-release
-NAME="BTRFSArch GNU+Linux"
-PRETTY_NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19-1)"
+NAME="[Redacted by Konqi the KDE Dragon][Redacted by Kiki the Krita Cybersquirrel]"
+PRETTY_NAME="[Redacted by Konqi the KDE Dragon][Redacted by Kiki the Krita Cybersquirrel]"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
 ANSI_COLOR="38;2;23;147;209"
-HOME_URL="https://github.com/GameFinders/BTRFSArchLinux-installsh"
+HOME_URL="[Redacted by Konqi the KDE Dragon]"
 LOGO="/usr/share/icons/btrfsarchlinux.png"
 EOF2
 
 echo "<< Installing GNU GRUB >>"
 pacman -S --needed --noconfirm grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="BTRFSArch GNU+Linux"
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="[Redacted by Konqi the KDE Dragon][Redacted by Kiki the Krita Cybersquirrel]"
 grub-mkconfig -o /boot/grub/grub.cfg
 
 useradd -m -G wheel -s /bin/bash "$NAMEUSER"
@@ -269,25 +315,136 @@ figlet -t -s Unmounting CHROOT FS
 umount -R /mnt
 
 clear
-echo "==BTRFSArch GNU/Linux========================================="
-echo "=================================================Alpha 0.19-1="
-echo " Installation successful"
+echo """
+
+
+
+
+
+
+
+
+                                                                             .:..
+                                                                          :=..=.
+                                                                       :=:...+.
+                                                                     :#.....-
+                                                                   .+.....+-
+                                                                  :#.....#:
+                                                             ..  -:.....+
+                                                          :=:=--+.....--
+                                                        :*...#*%.....#:
+                                                       -.....@@.....%-                 :----:.
+                                                      .#.....:....*@@#+====.        :=.......=:
+                                                      .%......................... :=..::::..:-.
+                                                      .%....................#-:  -*.::::..:=:
+              .::=--                                  .%.......*==+#=...*=+    :+..:::..+=:
+              :-....%*:.    .-------:::------:        -#.....#-    +#@@*      :*.::::.+=:
+              .*..@....*+-=..............::::.-:::   :#.....#:    :+....=:   :*......%+
+              :#..@.-@@:..:::::::::::*@@:.    #@..=-+=.....%      :..:.:--: :=.:@@@@@%+
+              .*..@@:..:::..::::::::@     @@@@@  @:.%#.....-      :-.:---:+-=#@........*:
+              =%@-:.:::::...:::::::@    @@@*+%@@@  ::+@..*-       :@.:----:**-...:::::..+.
+             :#...:::::::::::::::.@    @@**+@@    @ -::%#:        -+.:.=--:#::%@@::::=:.%:
+            -:.:::::::::::::::::::@    @**+@%@    @. -.:+        :*.:::..-##:@...::::::.+:
+          :+..:::::::::::::::::::::   @@*+@%%@@@@@%@ ::.#:      :*.:::::.-%-%-....:::::.*.
+         -:.:::::::::::::::::::::--   +@*+@%%%%%%@+%@::..-      -..:::::.:--+-.@@@:::::.=
+        -..:::::::::::::::::::::::-    @**+@%%%%%%@#@.::.*.    :*.::::::.=:-%%@...::::.=:
+       -.:::::::::::::::::::::::::-    @@*+@%%%%%%@%.:::.#:   :*.:::::::::...#:...::::.*.
+      -.::::::::::::::::::::::::::-.    @**=@%%@@@@.::::.#:  :#.:::::::::::.*+-.-+.::..:
+     ::.:::::::::::::::::::::::::::=    @@*+%@@@:...::::.#--+..:::::::::::..-@---@@..-:
+    :#.::::::::::::::::::::::::::::--    @@@@*...::::::.*##-.:::::::::...:=------:--#:
+    -.::::::::::::::::::::::::::::::-     ....::::::::..%%..::::::....=----------::=
+   :#.::::::::::::::..::::::::::::::-= ==--:::::::::...@:.:::::...------------:::=.
+   :.::::::::::::::.==.:::::::::---::---:::::::::::..@@..:::...=-----------:::=:.
+   -.::::::::::::::.==::::::::--= #-:::::::::::::..%@:.:::..=-----------::-*=:
+   -.:::::::...:::::...::::::--   #=::::::::::::##%:..:...=----------::-*=+##
+   -.:::::::-==.:::::::::::--#######-::::::::=##**.....-----------::-*++###+
+   ::.::::::.:=.:::::::::--###*----+=:::::::###+....------------:-*=+####*+
+   .#.:::::::::::::::::--###*--====+=::-%%%###+:-------------::-++####****+++-
+    :..:::::::::::::--=##*+*-====---@@@#*+#*#=-------------:-*=####*****#*****+===
+     -.:::::::::::--###*++*-==-=+@@@*++++%###-:------------*=###****#*************+==
+      -..::.::::-:###++++*--=+@@  #+++++%###------------:-=###***********************+=
+       :+..::::####*+++++:=@@*   ##+++#%+*% -----------:+=#***************************+=--
+         :*...::--+###*++@@     ##+++++**%#:-----------:+##********######*###******+==
+           :--=...::-=%@*#     :#+++++#*%% =----------:*=#****###******###%+=#***#*
+                -=+*%@ ###     #*++++#*#% .=-----------=##***********##*#...+=%# :+=--:.
+                  #%   ##     ##++++#*#%..+=...------:+##*****#****##+#...:.=+++*......-
+                 =+#    .    #########%...:.:::..---:+-+++++++*##%#*#..::::.#+.....::-%=-:.....
+                  *##            ..  %...::::::::.--:-          =+*..::..::%###%%%#%==#**-:-:%-
+               .:-#%@-          :.  %%.  -::::::::.-#:           +....:*%%==------------=====%+:
+             -=::-#**#       ....  *% .. -:::::::::.%:          ....@%+=---------------------::::::
+     .:::..::::---=####     -######% ... -:::::::::.=-         :=%%*=-------------------------:::::.
+     .::::----------=####..:. ####% .... ::::::::::..*:    .::-*-----------------------:::::..::::
+      :::::::----------###      #% ...... -::::::::::.==::::::----------------------:::::::
+         :=+#:----:::*#*=%#+    % ....... -:::::::::::..%-:------------------------:-=.
+           :#:-:::::- #.:-%%#  %. ....... -::::::::::::..------------------------::=
+           :-::=::   ++.-.. %%% ......... -::::::::::::::.----------------------:*:
+            ::.     :*.:-...   ............:::::::::::::::.---------------------*.
+                   :+.::-................. -:::::::::::::::.------------------ *
+                  :+.:::: ................ -::::::::::::::::.--------------== +
+                 :*.::::- ................. -::::::::::::::::.-----------=+  -
+                 *.:::::- ................. -:::::::::::::::::.%------==+.  =
+                -.::::::- .................. -:::::::::::::::::.@--==+... --
+               :#.:::::::=. ................ -::::::::::::::::::.@.......*
+               =.:::::::::@................. .::::::::::::::::::.-@.. :+:
+              :+.::::::::::@@..............:..@::::::::::::::::::.@+#+:
+              =.:::::::::::..@#*.......:::.....@..::::::::::::::::.%-
+             :#.:::::::::::..-.  :====   .....  %-.::::::::::::::::.=
+             -.:::::::::...+:           -======-:-#.:::::::::::::::.*:
+            :#.:::::::...=:                        +..:::::::::::::..*:
+           --.::::..::@%                            %@..::::::::::::..#
+         . #...::-@@@                                 @@..:::::::::::.@-           .      ..
+       .    :---                ..                      @@:::::::::::..@          ..
+                                 .....           .        =@:.::::::::.##  .
+                                                 ..    :    @@..::::::..@.
+                                                       .      @#.::::::.@.
+                                                           .   %@..:::..#
+                                                              .  %-....+*
+                                                                  .----
+
+
+
+
+
+
+
+
+============================ Invaded by Konqi the KDE Dragon ==============================================================================
+==================================================================================== and Kiki the Krita Cybersquirrel =====================
+================================================ 20:30 -- 21:30 ===========================================================================
+"""
+echo " [Redacted by Konqi the KDE Dragon][Redacted by Kiki the Krita Cybersquirrel]"
 echo ""
-echo " You may now restart the system."
-echo " Type in 'systemctl reboot' to restart."
+echo " The system will restart automatically."
+echo " Rebooting in 10 seconds."
 echo " There your Desktop is waiting."
 echo " Important notices:"
-echo " -> i live in Türkiye so it is set to trq as KBoard layout."
-echo " -> Before using the AUR, don't as there are 1000+ Malware."
-echo "    (just use flatpak bro, they are sandboxed)"
-echo " -> a DE will or will not be installed."
-echo " -> i offered options for DE so no Arch purist can call my"
-echo "    distro 'bloat' at this point"
-echo " -> Starting with BTRFSArch GNU+Linux 0.19 Alpha; Install script"
-echo "    (btrfsarchinstall.sh) is licensed under GNU License GPL."
-echo " -> Starting with BTRFSArch GNU+Linux 0.19 Alpha subversion 1;"
-echo "    there will be a artwork on the File named 'btrfsarchlinux.png'."
-echo " DE: $DESKTOP"
-echo " Installed resources for DE: $EXTRA_PKGS"
-echo " Extra packages: $EXTRA_PKGS_2"
+echo " -> [Redacted by Konqi the KDE Dragon]"
+echo " -> [Redacted by Kiki the Krita Cybersquirrel]"
+echo " Installed resources for DE: [Redacted by Konqi the KDE Dragon]"
+echo " Extra packages: [Redacted by Kiki the Krita Cybersquirrel]"
+echo " Trash that won't be installed: $USELESS"
 echo "=============================================================="
+sleep 1
+echo "10"
+sleep 1
+echo "9"
+sleep 1
+echo "8"
+sleep 1
+echo "7"
+sleep 1
+echo "6"
+sleep 1
+echo "5"
+sleep 1
+echo "4"
+sleep 1
+echo "3"
+sleep 1
+echo "2"
+sleep 1
+echo "1"
+sleep 1
+echo "0"
+sleep 1
+systemctl reboot
