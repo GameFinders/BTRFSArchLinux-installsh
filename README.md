@@ -26,11 +26,8 @@ then use "/mnt2/btrfsarchinstall.sh"
 The rest of the install is up to the script.
 To fix system if it breaks, visit "https://wiki.archlinux.org".
 
-# Version Alpha 0.19-1-1
-Added new Auto reboot after install.
+# Version Alpha 0.19-1-2
+New Bootloader selection menu (anything other than GRUB2 requires CMD Line btw.)
 
 # The "GNU-ification" of BTRFSArch Linux
 it is not "Linux", it is "GNU/Linux" or "GNU+Linux". Linux is merely the kernel.
-
-# Konqi and Kiki conquered BTRFSArch Linux?
-they cannot as it was all a prank, beside they are mascots, not hacker groups. Y'ALL HAVE BEEN FOOLED!

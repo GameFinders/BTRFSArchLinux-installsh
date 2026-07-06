@@ -64,7 +64,7 @@ clear
 echo "========================================================================================================================================================="
 echo "Welcome to"
 figlet -t -s BTRFSArch GNU+Linux
-echo "                                                                                                                                 Installer Alpha 0.19-1-1"
+echo "                                                                                                                                 Installer Alpha 0.19-1-2"
 echo "========================================================================================================================================================="
 echo ""
 
@@ -186,9 +186,9 @@ case $DE_CHOICE_USER in
         ;;
     7)
         echo "XFCE selected"
-        EXTRA_PKGS="xfce4 xfce4-goodies xfwm4 xfce4-panel xfdesktop xfce4-session xfce4-settings xfconf thunar xfce4-terminal xfce4-appfinder lxpolkit lightdm lightdm-gtk-greeter"
+        EXTRA_PKGS="xfce4 xfce4-goodies xfwm4 xfce4-panel xfdesktop xfce4-session xfce4-settings xfconf thunar xfce4-terminal xfce4-appfinder lightdm lightdm-gtk-greeter"
         DISPLAY_MGR="lightdm"
-        DESKTOP="fat mouse"
+        DESKTOP="XFCE4"
         ;;
     8)
         echo "Sway TWM Selected"
@@ -235,6 +235,40 @@ esac
 sleep 3
 
 clear
+figlet -t -s Bootloader selection
+echo "Starting with BTRFSArch Linux 0.19-1-2, you must select a Bootloader."
+echo ""
+echo "   NO #  NAME        DESCRIPTION"
+echo "      1  GRUB        GNU GRUB"
+echo "  0, 2+  Unlisted    Unlisted bootloader"
+read -p "   Choice : " BOOTLOADER_CHOICE_USER
+
+case $BOOTLOADER_CHOICE_USER in
+    1)
+        echo "GNU GRUB Selected"
+        LINE1="pacman -S --needed --noconfirm grub efibootmgr"
+        LINE2="grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id='BTRFSArch GNU+Linux'"
+        LINE3="grub-mkconfig -o /boot/grub/grub.cfg"
+        LINE4=""
+        LINE5=""
+        LINE6=""
+        LINE7=""
+        NAME_BOOTLOADER="GNU GRUB"
+        ;;
+    *)
+        echo "Custom bootloader selected"
+        echo "Tip: '[X] root@archiso ~ #' is a placeholder."
+        read -p "[1] root@archiso ~ # " LINE1
+        read -p "[2] root@archiso ~ # " LINE2
+        read -p "[3] root@archiso ~ # " LINE3
+        read -p "[4] root@archiso ~ # " LINE4
+        read -p "[5] root@archiso ~ # " LINE5
+        read -p "[6] root@archiso ~ # " LINE6
+        read -p "[7] root@archiso ~ # " LINE7
+        read -p "Bootloader name: " NAME_BOOTLOADER
+esac
+
+clear
 figlet -t -s Deploying Minimal System + DE + Misc
 pacstrap -K /mnt $BASE_PKGS $EXTRA_PKGS $EXTRA_PKGS_2
 sleep 1
@@ -275,7 +309,7 @@ mv btrfsarchlinux.png /usr/share/icons/btrfsarchlinux.png
 
 cat << 'EOF2' > /etc/os-release
 NAME="BTRFSArch GNU+Linux"
-PRETTY_NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19-1-1)"
+PRETTY_NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19-1-2)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
@@ -284,10 +318,14 @@ HOME_URL="https://github.com/GameFinders/BTRFSArchLinux-installsh"
 LOGO="/usr/share/icons/btrfsarchlinux.png"
 EOF2
 
-echo "<< Installing GNU GRUB >>"
-pacman -S --needed --noconfirm grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id="BTRFSArch GNU+Linux"
-grub-mkconfig -o /boot/grub/grub.cfg
+echo "<< Installing bootloader >>"
+$LINE1
+$LINE2
+$LINE3
+$LINE4
+$LINE5
+$LINE6
+$LINE7
 
 useradd -m -G wheel -s /bin/bash "$NAMEUSER"
 echo "$NAMEUSER:$PASSWDUSER" | chpasswd
@@ -326,7 +364,7 @@ echo """
         :::::::::::::          @ .:.#- @@  @@@@
        ::::::::::::::           @@@@.-.. --- #.             Meta distribution that formats to BTRFS by default; based on Arch Linux.
       ::::::::::::::.            ..::----::----             Installer finished.
-     ::::::::::::.                  .:::::::::::.           BTRFSArch GNU+Linux Installation finished with version 0.19-1-1.
+     ::::::::::::.                  .:::::::::::.           BTRFSArch GNU+Linux Installation finished with version 0.19-1-2.
     ::::::::.                            .::::::::
    :::::.                                    .:::::
   ...                                            ...
@@ -354,6 +392,7 @@ echo "    there will be a artwork on the File named 'btrfsarchlinux.png'."
 echo " DE: $DESKTOP"
 echo " Installed resources for DE: $EXTRA_PKGS"
 echo " Extra packages: $EXTRA_PKGS_2"
+echo " Bootloader: $NAME_BOOTLOADER"
 echo "=============================================================="
 sleep 1
 echo "10"
