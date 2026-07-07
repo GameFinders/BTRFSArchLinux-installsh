@@ -26,8 +26,9 @@ then use "/mnt2/btrfsarchinstall.sh"
 The rest of the install is up to the script.
 To fix system if it breaks, visit "https://wiki.archlinux.org".
 
-# Version Alpha 0.19-1-2
-New Bootloader selection menu (anything other than GRUB2 requires CMD Line btw.)
+# Version Alpha 0.19-1-3
+NO MORE KATE! I USE EMACS! and Shell freedom BTW.
 
 # The "GNU-ification" of BTRFSArch Linux
 it is not "Linux", it is "GNU/Linux" or "GNU+Linux". Linux is merely the kernel.
+and i use GNU Emacs instead of Kate.

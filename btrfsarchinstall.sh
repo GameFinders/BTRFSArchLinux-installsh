@@ -11,6 +11,8 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
+echo "Edited in GNU Emacs..."
+sleep 5
 set +x
 set -e
 clear
@@ -205,6 +207,39 @@ esac
 sleep 3
 
 clear
+figlet -t -s Shell
+echo "Starting with BTRFSArch Linux 0.19-1-3, you must choose a Shell."
+echo ""
+echo "  NO #  NAME     DESCRIPTION"
+echo "     1  bash     /bin/bash (GNU Bourne Again Shell)"
+echo "     2  zsh      /bin/zsh (Z Shell)"
+echo "     3  fish     /bin/fish (Friendly Interface Shell)"
+echo " 0, 4+  Unlisted /bin/???"
+echo "=================================================================================="
+read -p "   Choice : " USER_SHELL
+case $USER_SHELL in
+    1)
+        echo "Bash selected..."
+        SHELL_PACKAGE="bash"
+        SHELL_USER="bash"
+        ;;
+    2)
+        echo "ZSH selected..."
+        SHELL_PACKAGE="zsh"
+        SHELL_USER="zsh"
+        ;;
+    3)
+        echo "Fish selected..."
+        SHELL_PACKAGE="fish"
+        SHELL_USER="fish"
+        ;;
+    *)
+        echo "Unlisted shell selected"
+        read -p "[user@machine ~]$ sudo pacman -S " SHELL_PACKAGE
+        read -p "[user@machine ~]$ chsh -s /bin/" SHELL_USER
+esac
+
+clear
 figlet -t -s Extra applications
 echo ""
 echo "  NO #  NAME                              DESCRIPTION"
@@ -241,6 +276,7 @@ echo ""
 echo "   NO #  NAME        DESCRIPTION"
 echo "      1  GRUB        GNU GRUB"
 echo "  0, 2+  Unlisted    Unlisted bootloader"
+echo "=================================================================================="
 read -p "   Choice : " BOOTLOADER_CHOICE_USER
 
 case $BOOTLOADER_CHOICE_USER in
@@ -270,7 +306,7 @@ esac
 
 clear
 figlet -t -s Deploying Minimal System + DE + Misc
-pacstrap -K /mnt $BASE_PKGS $EXTRA_PKGS $EXTRA_PKGS_2
+pacstrap -K /mnt $BASE_PKGS $EXTRA_PKGS $EXTRA_PKGS_2 $SHELL_PACKAGE
 sleep 1
 
 clear
@@ -309,7 +345,7 @@ mv btrfsarchlinux.png /usr/share/icons/btrfsarchlinux.png
 
 cat << 'EOF2' > /etc/os-release
 NAME="BTRFSArch GNU+Linux"
-PRETTY_NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19-1-2)"
+PRETTY_NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19-1-3)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
@@ -327,7 +363,7 @@ $LINE5
 $LINE6
 $LINE7
 
-useradd -m -G wheel -s /bin/bash "$NAMEUSER"
+useradd -m -G wheel -s /bin/$SHELL_USER "$NAMEUSER"
 echo "$NAMEUSER:$PASSWDUSER" | chpasswd
 
 mkdir -p /etc/sudoers.d
@@ -364,7 +400,7 @@ echo """
         :::::::::::::          @ .:.#- @@  @@@@
        ::::::::::::::           @@@@.-.. --- #.             Meta distribution that formats to BTRFS by default; based on Arch Linux.
       ::::::::::::::.            ..::----::----             Installer finished.
-     ::::::::::::.                  .:::::::::::.           BTRFSArch GNU+Linux Installation finished with version 0.19-1-2.
+     ::::::::::::.                  .:::::::::::.           BTRFSArch GNU+Linux Installation finished with version 0.19-1-3.
     ::::::::.                            .::::::::
    :::::.                                    .:::::
   ...                                            ...
@@ -376,7 +412,7 @@ echo ""
 echo " Installation successful"
 echo ""
 echo " System will reboot automatically in"
-echo " 10 seconds"
+echo " 10 seconds. (Press CTRL C to interrupt auto reboot)"
 echo " There your Desktop is waiting."
 echo " Important notices:"
 echo " -> i live in Türkiye so it is set to trq as KBoard layout."
@@ -389,32 +425,48 @@ echo " -> Starting with BTRFSArch GNU+Linux 0.19 Alpha; Install script"
 echo "    (btrfsarchinstall.sh) is licensed under GNU License GPL."
 echo " -> Starting with BTRFSArch GNU+Linux 0.19 Alpha subversion 1;"
 echo "    there will be a artwork on the File named 'btrfsarchlinux.png'."
+echo " -> Starting with BTRFSArch GNU+Linux 0.19 Alpha subversion 1-3;"
+echo "    the entire OS is edited in Emacs instead of Kate."
 echo " DE: $DESKTOP"
 echo " Installed resources for DE: $EXTRA_PKGS"
 echo " Extra packages: $EXTRA_PKGS_2"
 echo " Bootloader: $NAME_BOOTLOADER"
+echo " Countdown will start within 5 seconds..."
 echo "=============================================================="
+sleep 5
+clear
+echo "Rebooting in (min:sec): 00:10..."
 sleep 1
-echo "10"
+clear
+echo "Rebooting in (min:sec): 00:09..."
 sleep 1
-echo "9"
+clear
+echo "Rebooting in (min:sec): 00:08..."
 sleep 1
-echo "8"
+clear
+echo "Rebooting in (min:sec): 00:07..."
 sleep 1
-echo "7"
+clear
+echo "Rebooting in (min:sec): 00:06..."
 sleep 1
-echo "6"
+clear
+echo "Rebooting in (min:sec): 00:05..."
 sleep 1
-echo "5"
+clear
+echo "Rebooting in (min:sec): 00:04..."
 sleep 1
-echo "4"
+clear
+echo "Rebooting in (min:sec): 00:03..."
 sleep 1
-echo "3"
+clear
+echo "Rebooting in (min:sec): 00:02..."
 sleep 1
-echo "2"
+clear
+echo "Rebooting in (min:sec): 00:01..."
 sleep 1
-echo "1"
+clear
+echo "Rebooting in (min:sec): 00:00..."
 sleep 1
-echo "0"
-sleep 1
+clear
 systemctl reboot
+# Installation finished.
