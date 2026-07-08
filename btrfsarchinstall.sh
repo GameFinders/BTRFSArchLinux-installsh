@@ -66,7 +66,7 @@ clear
 echo "========================================================================================================================================================="
 echo "Welcome to"
 figlet -t -s BTRFSArch GNU+Linux
-echo "                                                                                                                                 Installer Alpha 0.19-1-2"
+echo "                                                                                                                                   Installer Alpha 0.19-2"
 echo "========================================================================================================================================================="
 echo ""
 
@@ -233,6 +233,11 @@ case $USER_SHELL in
         SHELL_PACKAGE="fish"
         SHELL_USER="fish"
         ;;
+    4)
+	echo "Ksh selected..."
+	SHELL_PACKAGE="ksh"
+	SHELL_USER="ksh"
+	;;
     *)
         echo "Unlisted shell selected"
         read -p "[user@machine ~]$ sudo pacman -S " SHELL_PACKAGE
@@ -293,14 +298,15 @@ case $BOOTLOADER_CHOICE_USER in
         ;;
     *)
         echo "Custom bootloader selected"
-        echo "Tip: '[X] root@archiso ~ #' is a placeholder."
-        read -p "[1] root@archiso ~ # " LINE1
-        read -p "[2] root@archiso ~ # " LINE2
-        read -p "[3] root@archiso ~ # " LINE3
-        read -p "[4] root@archiso ~ # " LINE4
-        read -p "[5] root@archiso ~ # " LINE5
-        read -p "[6] root@archiso ~ # " LINE6
-        read -p "[7] root@archiso ~ # " LINE7
+	echo "The 7 Commands rule: Ye be allowed only seven commands before the script be settin' sail with what ye wrote!"
+        echo "Tip: '(X) root@archiso ~ #' is a placeholder."
+        read -p "(1) root@archiso ~ # " LINE1
+        read -p "(2) root@archiso ~ # " LINE2
+        read -p "(3) root@archiso ~ # " LINE3
+        read -p "(4) root@archiso ~ # " LINE4
+        read -p "(5) root@archiso ~ # " LINE5
+        read -p "(6) root@archiso ~ # " LINE6
+        read -p "(7) root@archiso ~ # " LINE7
         read -p "Bootloader name: " NAME_BOOTLOADER
 esac
 
@@ -345,7 +351,7 @@ mv btrfsarchlinux.png /usr/share/icons/btrfsarchlinux.png
 
 cat << 'EOF2' > /etc/os-release
 NAME="BTRFSArch GNU+Linux"
-PRETTY_NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19-1-3)"
+PRETTY_NAME="BTRFSArch GNU+Linux (installed via Installer Alpha 0.19-2)"
 ID=btrfsarchlinux
 ID_LIKE=arch
 BUILD_ID=rolling
@@ -400,7 +406,7 @@ echo """
         :::::::::::::          @ .:.#- @@  @@@@
        ::::::::::::::           @@@@.-.. --- #.             Meta distribution that formats to BTRFS by default; based on Arch Linux.
       ::::::::::::::.            ..::----::----             Installer finished.
-     ::::::::::::.                  .:::::::::::.           BTRFSArch GNU+Linux Installation finished with version 0.19-1-3.
+     ::::::::::::.                  .:::::::::::.           BTRFSArch GNU+Linux Installation finished with version 0.19-2.
     ::::::::.                            .::::::::
    :::::.                                    .:::::
   ...                                            ...
