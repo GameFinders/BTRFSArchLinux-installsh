@@ -214,7 +214,8 @@ echo "  NO #  NAME     DESCRIPTION"
 echo "     1  bash     /bin/bash (GNU Bourne Again Shell)"
 echo "     2  zsh      /bin/zsh (Z Shell)"
 echo "     3  fish     /bin/fish (Friendly Interface Shell)"
-echo " 0, 4+  Unlisted /bin/???"
+echo "     4  ksh      /bin/ksh (Korn Shell)"
+echo " 0, 5+  Unlisted /bin/???"
 echo "=================================================================================="
 read -p "   Choice : " USER_SHELL
 case $USER_SHELL in
