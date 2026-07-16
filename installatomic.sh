@@ -63,12 +63,12 @@ sleep 1
 
 clear
 figlet -t -c BTRFSArch Linux
-figlet -t -c Atomic 0.19-2
+figlet -t -c Atomic Variant (SH script 0.0-0-0 A2)
 echo "Based on Arch Linux; now with FRZR!"
 
 echo "[!] DEV VERSION [!]"
-echo "SH Script ALPHA 0.0-0-0 A1"
-echo ".tar.gz File on Hugging Face (HF Hub)"
+echo "SH Script ALPHA 0.0-0-0 A2"
+echo ".tar.gz File on Hugging Face Hub (HF Hub)"
 
 echo ""
 echo "Welcome to BTRFSArch Linux Atomic!"
@@ -117,7 +117,8 @@ sleep 1
 
 clear
 figlet -t -s Formatting partitions
-mkfs.vfat -F 32 -L "frzr_efi" "$BOOT_PART"
+mkfs.vfat -F 32 "$BOOT_PART"
+fatlabel "$BOOT_PART" "frzr_efi"
 mkfs.btrfs -f -L "frzr_root" "$ROOT_PART"
 sleep 1
 
