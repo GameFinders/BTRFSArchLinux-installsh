@@ -42,7 +42,7 @@ echo """
         :::::::::::::          @ .:.#- @@  @@@@
        ::::::::::::::           @@@@.-.. --- #.             Meta distribution that formats to BTRFS by default; based on Arch Linux.
       ::::::::::::::.            ..::----::----             Installer Stage 1 invoked.
-     ::::::::::::.                  .:::::::::::.           BTRFSArch Linux Atomic Dev version 0.0-0-0 snapshot A3
+     ::::::::::::.                  .:::::::::::.           BTRFSArch Linux Atomic Dev version 0.0-0-0 snapshot A4
     ::::::::.                            .::::::::
    :::::.                                    .:::::
   ...                                            ...
@@ -63,11 +63,11 @@ sleep 1
 
 clear
 figlet -t -c BTRFSArch Linux
-figlet -t -c Atomic Variant [SH script 0.0-0-0 A3]
+figlet -t -c Atomic Variant [SH script 0.0-0-0 A4]
 echo "Based on Arch Linux; now with FRZR!"
 
 echo "[!] DEV VERSION [!]"
-echo "SH Script ALPHA 0.0-0-0 A2"
+echo "SH Script ALPHA 0.0-0-0 A4"
 echo ".tar.gz File on Hugging Face Hub (HF Hub)"
 
 echo ""
@@ -127,7 +127,9 @@ figlet -t -s Preparing to deploy system...
 TARGET_DIR="/mnt/target"
 mkdir -p "$TARGET_DIR"
 
-mount -o subvol=deployments/active "$ROOT_PART" "$TARGET_DIR"
+mount "$ROOT_PART" "$TARGET_DIR"
+
+mkdir -p "$TARGET_DIR/boot"
 mount "$BOOT_PART" "$TARGET_DIR/boot"
 sleep 1
 
