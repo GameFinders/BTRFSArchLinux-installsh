@@ -140,7 +140,7 @@ echo "URL : $URL0"
 echo "Now installing FRZR ..."
 if command -v pacman &>/dev/null; then
     # Install dependencies required by frzr
-    pacman -Syu --noconfirm git btrfs-progs curl jq
+    pacman -Syy --noconfirm git btrfs-progs curl jq
     
     # Clone and install frzr directly
     git clone https://github.com/ChimeraOS/frzr.git /tmp/frzr-src
@@ -155,9 +155,16 @@ else
     echo "Unsupported Live ISO package manager. Ensure 'frzr-deploy' is manually loaded."
     exit 1
 fi
-echo "Now deploying BTRFSArch Linux atomic from $URL0 ..."
-frzr-deploy $URL0
-sleep 1
+echo "Streaming and deploying BTRFSArch Linux atomic from $URL0..."
+
+# Create target directories
+mkdir -p "$TARGET_DIR"
+
+# Stream the download directly into tar to save RAM!
+# This extracts the files in real-time onto the hard drive without saving the .tar.gz to RAM.
+curl -L "$URL0" | tar -xzvpf - -C "$TARGET_DIR" --numeric-owner
+
+echo "Deployment complete!"
 
 clear
 figlet -t -s User creation
