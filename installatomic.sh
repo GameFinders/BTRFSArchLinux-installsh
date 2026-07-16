@@ -143,10 +143,15 @@ if command -v pacman &>/dev/null; then
     pacman -Syu --noconfirm git btrfs-progs curl jq
     
     # Clone and install frzr directly
+    # Clone and install all frzr helper utilities directly
     git clone https://github.com/ChimeraOS/frzr.git /tmp/frzr-src
-    cp /tmp/frzr-src/frzr-deploy /usr/bin/frzr-deploy
-    cp /tmp/frzr-src/__frzr-deploy /usr/bin/__frzr-deploy
-    chmod +x /usr/bin/frzr-deploy /usr/bin/__frzr-deploy
+
+    # Copy all frzr executables and scripts (including frzr-release, frzr-bootstrap, etc.)
+    cp /tmp/frzr-src/frzr-* /usr/bin/
+    cp /tmp/frzr-src/__frzr-deploy /usr/bin/
+
+    # Make sure all copied files are executable
+    chmod +x /usr/bin/frzr-* /usr/bin/__frzr-deploy
 else
     echo "Unsupported Live ISO package manager. Ensure 'frzr-deploy' is manually loaded."
     exit 1
