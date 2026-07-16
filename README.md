@@ -29,6 +29,11 @@ To fix system if it breaks, visit "https://wiki.archlinux.org".
 # Version Alpha 0.19-1-3
 NO MORE KATE! I USE EMACS! and Shell freedom BTW.
 
+# Version Atomic 0.19-2
+SH Script provided for this. Versions may alter.
+
+Website: https://huggingface.co/datasets/GameFinders/BTRFSArchLinux-atomic/tree/main
+
 # The "GNU-ification" of BTRFSArch Linux
 it is not "Linux", it is "GNU/Linux" or "GNU+Linux". Linux is merely the kernel.
 and i use GNU Emacs instead of Kate.
