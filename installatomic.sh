@@ -42,7 +42,7 @@ echo """
         :::::::::::::          @ .:.#- @@  @@@@
        ::::::::::::::           @@@@.-.. --- #.             Meta distribution that formats to BTRFS by default; based on Arch Linux.
       ::::::::::::::.            ..::----::----             Installer Stage 1 invoked.
-     ::::::::::::.                  .:::::::::::.           BTRFSArch Linux Atomic Dev version 0.0-0-0 snapshot B1
+     ::::::::::::.                  .:::::::::::.           BTRFSArch Linux Atomic Dev version 0.0-0-0 snapshot B2
     ::::::::.                            .::::::::
    :::::.                                    .:::::
   ...                                            ...
@@ -63,11 +63,11 @@ sleep 1
 
 clear
 figlet -t -c BTRFSArch Linux
-figlet -t -c Atomic Variant [SH script 0.0-0-0 B1]
+figlet -t -c Atomic Variant [SH script 0.0-0-0 B2]
 echo "Based on Arch Linux; now with FRZR!"
 
 echo "[!] DEV VERSION [!]"
-echo "SH Script ALPHA 0.0-0-0 B1"
+echo "SH Script ALPHA 0.0-0-0 B2"
 echo ".tar.gz File on Hugging Face Hub (HF Hub)"
 
 echo ""
@@ -139,14 +139,18 @@ URL0="https://huggingface.co/datasets/GameFinders/BTRFSArchLinux-atomic/resolve/
 echo "URL : $URL0"
 echo "Now installing FRZR ..."
 if command -v pacman &>/dev/null; then
-    # Install dependencies required by frzr (adding 'make' to the list)
-    pacman -Syu --noconfirm git btrfs-progs curl jq make
+    # Install dependencies required by frzr
+    pacman -Syu --noconfirm git btrfs-progs curl jq
     
-    # Clone and install frzr using its official installer
+    # Clone and install frzr directly
     git clone https://github.com/ChimeraOS/frzr.git /tmp/frzr-src
     
-    # Use the Makefile to install all frzr binaries perfectly
-    make -C /tmp/frzr-src install
+    # Copy all executable scripts from the source directory to /usr/bin/
+    find /tmp/frzr-src -maxdepth 1 -type f -executable -exec cp {} /usr/bin/ \;
+    
+    # Also copy the internal script
+    cp /tmp/frzr-src/__frzr-deploy /usr/bin/
+    chmod +x /usr/bin/__frzr-deploy
 else
     echo "Unsupported Live ISO package manager. Ensure 'frzr-deploy' is manually loaded."
     exit 1
