@@ -139,19 +139,14 @@ URL0="https://huggingface.co/datasets/GameFinders/BTRFSArchLinux-atomic/resolve/
 echo "URL : $URL0"
 echo "Now installing FRZR ..."
 if command -v pacman &>/dev/null; then
-    # Install dependencies required by frzr
-    pacman -Syu --noconfirm git btrfs-progs curl jq
+    # Install dependencies required by frzr (adding 'make' to the list)
+    pacman -Syu --noconfirm git btrfs-progs curl jq make
     
-    # Clone and install frzr directly
-    # Clone and install all frzr helper utilities directly
+    # Clone and install frzr using its official installer
     git clone https://github.com/ChimeraOS/frzr.git /tmp/frzr-src
-
-    # Copy all frzr executables and scripts (including frzr-release, frzr-bootstrap, etc.)
-    cp /tmp/frzr-src/frzr-* /usr/bin/
-    cp /tmp/frzr-src/__frzr-deploy /usr/bin/
-
-    # Make sure all copied files are executable
-    chmod +x /usr/bin/frzr-* /usr/bin/__frzr-deploy
+    
+    # Use the Makefile to install all frzr binaries perfectly
+    make -C /tmp/frzr-src install
 else
     echo "Unsupported Live ISO package manager. Ensure 'frzr-deploy' is manually loaded."
     exit 1
