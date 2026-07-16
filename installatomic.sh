@@ -15,7 +15,7 @@ set -euo pipefail
 echo "Edited in Neovim..."
 sleep 2
 
-mount -o remount,size=2G /run/archiso/cowspace
+mount -o remount,size=4G /run/archiso/cowspace
 clear
 echo """
                           .
@@ -42,7 +42,7 @@ echo """
         :::::::::::::          @ .:.#- @@  @@@@
        ::::::::::::::           @@@@.-.. --- #.             Meta distribution that formats to BTRFS by default; based on Arch Linux.
       ::::::::::::::.            ..::----::----             Installer Stage 1 invoked.
-     ::::::::::::.                  .:::::::::::.           BTRFSArch Linux Atomic Dev version 0.0-0-0 snapshot A4
+     ::::::::::::.                  .:::::::::::.           BTRFSArch Linux Atomic Dev version 0.0-0-0 snapshot B1
     ::::::::.                            .::::::::
    :::::.                                    .:::::
   ...                                            ...
@@ -63,11 +63,11 @@ sleep 1
 
 clear
 figlet -t -c BTRFSArch Linux
-figlet -t -c Atomic Variant [SH script 0.0-0-0 A4]
+figlet -t -c Atomic Variant [SH script 0.0-0-0 B1]
 echo "Based on Arch Linux; now with FRZR!"
 
 echo "[!] DEV VERSION [!]"
-echo "SH Script ALPHA 0.0-0-0 A4"
+echo "SH Script ALPHA 0.0-0-0 B1"
 echo ".tar.gz File on Hugging Face Hub (HF Hub)"
 
 echo ""
