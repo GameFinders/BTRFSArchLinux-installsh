@@ -30,7 +30,7 @@ To fix system if it breaks, visit "https://wiki.archlinux.org".
 NO MORE KATE! I USE EMACS! and Shell freedom BTW.
 
 # Version Atomic 0.19-2
-SH Script provided for this. Versions may alter.
+SH Script provided for this. Versions may alter. (unfortunately the SH script is experiencing init issues at the moment.)
 
 Website: https://huggingface.co/datasets/GameFinders/BTRFSArchLinux-atomic/tree/main
 
