@@ -26,11 +26,11 @@ then use "/mnt2/btrfsarchinstall.sh"
 The rest of the install is up to the script.
 To fix system if it breaks, visit "https://wiki.archlinux.org".
 
-# Version Alpha 0.19-1-3
-NO MORE KATE! I USE EMACS! and Shell freedom BTW.
+# Version Alpha 0.19-2
+bugfix...?
 
 # Version Atomic 0.19-2
-SH Script provided for this. Versions may alter. (unfortunately the SH script is experiencing init issues at the moment.)
+SH Script provided for this. Versions may alter.
 
 Website: https://huggingface.co/datasets/GameFinders/BTRFSArchLinux-atomic/tree/main
 

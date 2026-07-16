@@ -244,6 +244,7 @@ case $USER_SHELL in
         read -p "[user@machine ~]$ sudo pacman -S " SHELL_PACKAGE
         read -p "[user@machine ~]$ chsh -s /bin/" SHELL_USER
 esac
+sleep 5
 
 clear
 figlet -t -s Extra applications
@@ -310,6 +311,7 @@ case $BOOTLOADER_CHOICE_USER in
         read -p "(7) root@archiso ~ # " LINE7
         read -p "Bootloader name: " NAME_BOOTLOADER
 esac
+sleep 5
 
 clear
 figlet -t -s Deploying Minimal System + DE + Misc

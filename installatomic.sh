@@ -81,6 +81,8 @@ echo "2. The system is atomic: if a update causes a error, rollback the entire s
 echo "   Feel free to update & rollback!"
 echo "3. Atomic BTRFS: BTRFSArch Linux Atomic is still BTRFS"
 echo "4. use doas, not sudo: this system utilizes OpenBSD's doas instead of the mainstream sudo."
+echo ""
+lsblk -d -n -o NAME,SIZE,MODEL
 read -p "Enter the drive name to install to [Example: sda, nvme0n1, sdb]: " DISK_NAME
 TARGET_DISK="/dev/$DISK_NAME"
 
