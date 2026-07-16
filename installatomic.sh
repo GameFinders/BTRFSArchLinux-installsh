@@ -15,6 +15,7 @@ set -euo pipefail
 echo "Edited in Neovim..."
 sleep 2
 
+mount -o remount,size=2G /run/archiso/cowspace
 clear
 echo """
                           .
@@ -101,7 +102,7 @@ clear
 figlet -t -s Partitioning disks
 parted -s "$TARGET_DISK" mklabel gpt
 
-parted -s "$TARGET_DISK" mkpart ESP fat32 1MiB 513 MiB
+parted -s "$TARGET_DISK" mkpart ESP fat32 1MiB 513MiB
 parted -s "$TARGET_DISK" set 1 esp on
 parted -s "$TARGET_DISK" mkpart primary btrfs 513MiB 100%
 
