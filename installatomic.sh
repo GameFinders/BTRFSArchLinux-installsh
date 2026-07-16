@@ -42,7 +42,7 @@ echo """
         :::::::::::::          @ .:.#- @@  @@@@
        ::::::::::::::           @@@@.-.. --- #.             Meta distribution that formats to BTRFS by default; based on Arch Linux.
       ::::::::::::::.            ..::----::----             Installer Stage 1 invoked.
-     ::::::::::::.                  .:::::::::::.           BTRFSArch Linux Atomic Dev version 0.0-0-0 snapshot A1
+     ::::::::::::.                  .:::::::::::.           BTRFSArch Linux Atomic Dev version 0.0-0-0 snapshot A3
     ::::::::.                            .::::::::
    :::::.                                    .:::::
   ...                                            ...
@@ -63,7 +63,7 @@ sleep 1
 
 clear
 figlet -t -c BTRFSArch Linux
-figlet -t -c Atomic Variant (SH script 0.0-0-0 A2)
+figlet -t -c Atomic Variant [SH script 0.0-0-0 A3]
 echo "Based on Arch Linux; now with FRZR!"
 
 echo "[!] DEV VERSION [!]"
