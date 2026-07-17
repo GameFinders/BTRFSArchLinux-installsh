@@ -160,11 +160,23 @@ echo "Streaming and deploying BTRFSArch Linux atomic from $URL0..."
 # Create target directories
 mkdir -p "$TARGET_DIR"
 
-# Stream the download directly into tar to save RAM!
-# This extracts the files in real-time onto the hard drive without saving the .tar.gz to RAM.
-curl -L "$URL0" | tar -xzvpf - -C "$TARGET_DIR" --numeric-owner
+# Create a temporary directory on your actual hard drive partition (NOT in RAM)
+mkdir -p "$TARGET_DIR/tmp"
+
+echo "Downloading BTRFSArch Linux .tar.gz directly to disk ..."
+# Download the actual file directly to your disk's tmp folder
+curl -L -o "$TARGET_DIR/tmp/os-immutablearch.tar.gz" "https://huggingface.co/datasets/GameFinders/BTRFSArchlinux-atomic/resolve/main/os-immutablearch.tar.gz?download=true"
+
+echo "Extracting system files ..."
+# Extract the download from your hard drive into your root mount point
+tar -xzvpf "$TARGET_DIR/tmp/os-immutablearch.tar.gz" -C "$TARGET_DIR" --numeric-owner
+
+echo "Cleaning up installation files ..."
+# Delete the 5 GB zip file from your disk to free up space
+rm "$TARGET_DIR/tmp/os-immutablearch.tar.gz"
 
 echo "Deployment complete!"
+sleep 1
 
 clear
 figlet -t -s User creation
