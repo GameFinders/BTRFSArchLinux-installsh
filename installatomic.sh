@@ -162,7 +162,7 @@ mkdir -p "$TARGET_DIR"
 
 # Stream the download directly into tar to save RAM!
 # This extracts the files in real-time onto the hard drive without saving the .tar.gz to RAM.
-curl -L "$URL0" | tar -xzvpf - -C "$TARGET_DIR" --numeric-owner
+curl -L -o - "$URL0" | tar -xzvpf - -C "$TARGET_DIR" --numeric-owner
 
 echo "Deployment complete!"
 
