@@ -56,7 +56,7 @@ ping -c 3 kde.org
 echo "Installing greeter engine & AUR tools needed for frzr ..."
 pacman-key --init
 pacman-key --populate archlinux
-pacman -Syy --noconfirm figlet base-devel archlinux-keyring
+pacman -Syy --noconfirm figlet base-devel archlinux-keyring aria2
 
 echo "Starting installer. one moment..."
 sleep 1
@@ -152,29 +152,31 @@ if command -v pacman &>/dev/null; then
     cp /tmp/frzr-src/__frzr-deploy /usr/bin/
     chmod +x /usr/bin/__frzr-deploy
 else
-    echo "Unsupported Live ISO package manager. Ensure 'frzr-deploy' is manually loaded."
+    echo "[E] Unsupported Live ISO package manager."
+    echo "    Please ensure frzr-deploy is manually loaded."
     exit 1
 fi
-echo "Streaming and deploying BTRFSArch Linux atomic from $URL0..."
+# Define where the temporary file lives on your actual disk partition
+TEMP_DIR="$TARGET_DIR/tmp"
+mkdir -p "$TEMP_DIR"
 
-# Create target directories
-mkdir -p "$TARGET_DIR"
+echo "Downloading system files using aria2 ..."
 
-# Create a temporary directory on your actual hard drive partition (NOT in RAM)
-mkdir -p "$TARGET_DIR/tmp"
+# Direct LFS storage link
+DIRECT_LFS_URL="https://huggingface.co/datasets/GameFinders/BTRFSArchlinux-atomic/media/main/os-immutablearch.tar.gz"
 
-echo "Downloading BTRFSArch Linux .tar.gz directly to disk ..."
-# Download the actual file directly to your disk's tmp folder
-curl -L -o "$TARGET_DIR/tmp/os-immutablearch.tar.gz" "https://huggingface.co/datasets/GameFinders/BTRFSArchlinux-atomic/resolve/main/os-immutablearch.tar.gz?download=true"
+# Run aria2c with multi-connection optimization
+# -d: output directory
+# -o: output filename
+# -x16 / -s16: splits the download into 16 simultaneous connections for max speed
+# --retry-wait=2 / -m0: infinite retries if connection stalls
+aria2c -x 16 -s 16 -m 0 --retry-wait=2 -d "$TEMP_DIR" -o "os-immutablearch.tar.gz" "$DIRECT_LFS_URL"
 
-echo "Extracting system files ..."
-# Extract the download from your hard drive into your root mount point
-tar -xzvpf "$TARGET_DIR/tmp/os-immutablearch.tar.gz" -C "$TARGET_DIR" --numeric-owner
+echo "Download finished successfully. Extracting ..."
+frzr-deploy "$TEMP_DIR/os-immutablearch.tar.gz" "BTRFSArchLinux-Atomic"
 
-echo "Cleaning up installation files ..."
-# Delete the 5 GB zip file from your disk to free up space
-rm "$TARGET_DIR/tmp/os-immutablearch.tar.gz"
-
+echo "Clearing files ..."
+rm -rf "$TEMP_DIR/os-immutablearch.tar.gz"
 echo "Deployment complete!"
 sleep 1
 
