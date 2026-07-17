@@ -135,7 +135,7 @@ sleep 1
 
 clear
 figlet -t -s Deploying image over FRZR...
-URL0="https://huggingface.co/datasets/GameFinders/BTRFSArchLinux-atomic/resolve/main/os-immutablearch.tar.gz"
+URL0="https://huggingface.co/datasets/GameFinders/BTRFSArchLinux-atomic/resolve/main/os-immutablearch.tar.gz?download=true"
 echo "URL : $URL0"
 echo "Now installing FRZR ..."
 if command -v pacman &>/dev/null; then
